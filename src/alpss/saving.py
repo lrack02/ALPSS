@@ -5,7 +5,7 @@ from IPython.display import display
 
 
 # function for saving all the final outputs
-def saving(
+def save(
     sdf_out, cen, vc_out, sa_out, iua_out, fua_out, start_time, end_time, fig, **inputs
 ):
     fname = os.path.join(inputs["out_files_dir"], os.path.basename(inputs["filepath"]))

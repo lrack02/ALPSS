@@ -1,17 +1,15 @@
 import os
 from alpss.spall_doi_finder import spall_doi_finder
-from alpss.plotting import plotting
+from alpss.plotting import plot_results, plot_voltage
 from alpss.carrier_frequency import carrier_frequency
 from alpss.carrier_filter import carrier_filter
 from alpss.velocity_calculation import velocity_calculation
 from alpss.spall_analysis import spall_analysis
 from alpss.full_uncertainty_analysis import full_uncertainty_analysis
 from alpss.instantaneous_uncertainty_analysis import instantaneous_uncertainty_analysis
-from alpss.saving import saving
+from alpss.saving import save
 from datetime import datetime
 import traceback
-import matplotlib.pyplot as plt
-import pandas as pd
 import logging
 
 logging.basicConfig(
@@ -65,7 +63,7 @@ def alpss_main(**inputs):
         end_time = datetime.now()
 
         # function to generate the final figure
-        fig = plotting(
+        fig = plot_results(
             sdf_out,
             cen,
             cf_out,
@@ -89,7 +87,7 @@ def alpss_main(**inputs):
         # return the figure so it can be saved if desired
         # function to save the output files if desired
         if inputs["save_data"] == "yes":
-            df = saving(
+            df = save(
                 sdf_out,
                 cen,
                 vc_out,
@@ -113,64 +111,7 @@ def alpss_main(**inputs):
         # attempt to plot the voltage signal from the imported data
         try:
             logging.info("Attempting a fallback visualization of the voltage signal...")
-            # import the desired data. Convert the time to skip and turn into number of rows
-            t_step = 1 / inputs["sample_rate"]
-            rows_to_skip = (
-                inputs["header_lines"] + inputs["time_to_skip"] / t_step
-            )  # skip the header lines too
-            nrows = inputs["time_to_take"] / t_step
-
-            # change directory to where the data is stored
-            data = pd.read_csv(
-                inputs["filepath"],
-                skiprows=int(rows_to_skip),
-                nrows=int(nrows),
-            )
-
-            # rename the columns of the data
-            data.columns = ["Time", "Ampl"]
-
-            # put the data into numpy arrays. Zero the time data
-            time = data["Time"].to_numpy()
-            time = time - time[0]
-            voltage = data["Ampl"].to_numpy()
-
-            # calculate the sample rate from the experimental data
-            fs = 1 / np.mean(np.diff(time))
-
-            # calculate the short time fourier transform
-            f, t, Zxx = stft(voltage, fs, **inputs)
-
-            # calculate magnitude of Zxx
-            mag = np.abs(Zxx)
-
-            # plotting
-            fig, (ax1, ax2) = plt.subplots(
-                1, 2, num=2, figsize=(11, 4), dpi=300, clear=True
-            )
-            ax1.plot(time / 1e-9, voltage / 1e-3)
-            ax1.set_xlabel("Time (ns)")
-            ax1.set_ylabel("Voltage (mV)")
-            ax2.imshow(
-                10 * np.log10(mag**2),
-                aspect="auto",
-                origin="lower",
-                interpolation="none",
-                extent=[t[0] / 1e-9, t[-1] / 1e-9, f[0] / 1e9, f[-1] / 1e9],
-                cmap=inputs["cmap"],
-            )
-            ax2.set_xlabel("Time (ns)")
-            ax2.set_ylabel("Frequency (GHz)")
-            fig.suptitle("ERROR: Program Failed", c="r", fontsize=16)
-
-            plt.tight_layout()
-            if inputs["save_data"] == "yes":
-                fname = os.path.join(
-                    inputs["out_files_dir"], os.path.basename(inputs["filepath"])
-                )
-                fig.savefig(f"{fname}--error_plot.png")
-            if inputs["display_plots"] == "yes":
-                plt.show()
+            plot_voltage(**inputs)
 
         # if that also fails then log the traceback and stop running the program
         except Exception as e:
