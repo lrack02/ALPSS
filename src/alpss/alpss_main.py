@@ -12,6 +12,16 @@ from datetime import datetime
 import traceback
 import matplotlib.pyplot as plt
 import pandas as pd
+import logging
+
+logging.basicConfig(
+    level=logging.ERROR,  # Minimum level of messages to log (can be DEBUG, INFO, WARNING, ERROR, CRITICAL)
+    format="%(asctime)s - %(levelname)s - %(message)s",  # Log format (include timestamp, level, message)
+    handlers=[
+        logging.FileHandler("error_log.txt"),  # Log to a file
+        logging.StreamHandler(),  # Also log to console
+    ],
+)
 
 
 def validate_inputs(inputs):
@@ -93,12 +103,14 @@ def alpss_main(**inputs):
             )
 
     # in case the program throws an error
-    except Exception:
+    except Exception as e:
         # print the traceback for the error
-        print(traceback.format_exc())
+        logging.error("Error in the execution of the main program:: %s", str(e))
+        logging.error("Traceback: %s", traceback.format_exc())
 
         # attempt to plot the voltage signal from the imported data
         try:
+            print("Attempting a fallback visualization of the voltage signal...")
             # import the desired data. Convert the time to skip and turn into number of rows
             t_step = 1 / inputs["sample_rate"]
             rows_to_skip = (
@@ -157,5 +169,8 @@ def alpss_main(**inputs):
                 plt.show()
 
         # if that also fails then print the traceback and stop running the program
-        except Exception:
-            print(traceback.format_exc())
+        except Exception as e:
+            logging.error(
+                "Error in the fallback visualization of the voltage signal: %s", str(e)
+            )
+            logging.error("Traceback: %s", traceback.format_exc())

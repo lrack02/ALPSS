@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "alpss"
-version = "1.3.0-beta"
+version = "1.3.0-beta.1"
 authors = [
     {name = "Jake Diamond", email = "jdiamo15@jhu.edu", github = "Jake-Diamond-9"},
     {name = "K. T. Ramesh", email = "ramesh@jhu.edu"},
