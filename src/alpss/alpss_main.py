@@ -1,13 +1,13 @@
 import os
-from alpss.spall_doi_finder import *
-from alpss.plotting import *
-from alpss.carrier_frequency import *
-from alpss.carrier_filter import *
-from alpss.velocity_calculation import *
-from alpss.spall_analysis import *
-from alpss.full_uncertainty_analysis import *
-from alpss.instantaneous_uncertainty_analysis import *
-from alpss.saving import *
+from alpss.spall_doi_finder import spall_doi_finder
+from alpss.plotting import plotting
+from alpss.carrier_frequency import carrier_frequency
+from alpss.carrier_filter import carrier_filter
+from alpss.velocity_calculation import velocity_calculation
+from alpss.spall_analysis import spall_analysis
+from alpss.full_uncertainty_analysis import full_uncertainty_analysis
+from alpss.instantaneous_uncertainty_analysis import instantaneous_uncertainty_analysis
+from alpss.saving import saving
 from datetime import datetime
 import traceback
 import matplotlib.pyplot as plt
@@ -82,14 +82,14 @@ def alpss_main(**inputs):
         # MOVED to plotting
         # end final timer and display full runtime
         end_time2 = datetime.now()
-        print(
+        logging.info(
             f"\nFull program runtime (including plotting and saving):\n{end_time2 - start_time}\n"
         )
 
         # return the figure so it can be saved if desired
         # function to save the output files if desired
         if inputs["save_data"] == "yes":
-            return saving(
+            df = saving(
                 sdf_out,
                 cen,
                 vc_out,
@@ -101,16 +101,18 @@ def alpss_main(**inputs):
                 fig,
                 **inputs,
             )
+            return fig, df
+
+        return (fig,)
 
     # in case the program throws an error
     except Exception as e:
-        # print the traceback for the error
         logging.error("Error in the execution of the main program:: %s", str(e))
         logging.error("Traceback: %s", traceback.format_exc())
 
         # attempt to plot the voltage signal from the imported data
         try:
-            print("Attempting a fallback visualization of the voltage signal...")
+            logging.info("Attempting a fallback visualization of the voltage signal...")
             # import the desired data. Convert the time to skip and turn into number of rows
             t_step = 1 / inputs["sample_rate"]
             rows_to_skip = (
@@ -120,7 +122,7 @@ def alpss_main(**inputs):
 
             # change directory to where the data is stored
             data = pd.read_csv(
-                inputs["filename"],
+                inputs["filepath"],
                 skiprows=int(rows_to_skip),
                 nrows=int(nrows),
             )
@@ -163,12 +165,14 @@ def alpss_main(**inputs):
 
             plt.tight_layout()
             if inputs["save_data"] == "yes":
-                fname = os.path.join(inputs["out_files_dir"], inputs["filename"][0:-4])
+                fname = os.path.join(
+                    inputs["out_files_dir"], os.path.basename(inputs["filepath"])
+                )
                 fig.savefig(f"{fname}--error_plot.png")
             if inputs["display_plots"] == "yes":
                 plt.show()
 
-        # if that also fails then print the traceback and stop running the program
+        # if that also fails then log the traceback and stop running the program
         except Exception as e:
             logging.error(
                 "Error in the fallback visualization of the voltage signal: %s", str(e)

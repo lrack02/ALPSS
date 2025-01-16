@@ -8,7 +8,7 @@ from IPython.display import display
 def saving(
     sdf_out, cen, vc_out, sa_out, iua_out, fua_out, start_time, end_time, fig, **inputs
 ):
-    fname = os.path.join(inputs["out_files_dir"], inputs["filename"][0:-4])
+    fname = os.path.join(inputs["out_files_dir"], os.path.basename(inputs["filepath"]))
 
     # save the plots
     fig.savefig(
@@ -87,7 +87,7 @@ def saving(
         "Value": [
             start_time.strftime("%b %d %Y"),
             start_time.strftime("%I:%M %p"),
-            inputs["filename"],
+            os.path.basename(inputs["filepath"]),
             (end_time - start_time),
             sa_out["v_max_comp"],
             sa_out["t_max_comp"],
@@ -113,12 +113,6 @@ def saving(
 
     # display the final results table in nanoseconds to make it more readable
     # the data in the saved file is still in seconds
-    # results_df["Value"][5] = results_df["Value"][5] / 1e-9
-    # results_df["Value"][7] = results_df["Value"][7] / 1e-9
-    # results_df["Value"][9] = results_df["Value"][9] / 1e-9
-    # results_df["Value"][16] = results_df["Value"][16] / 1e-9
-    # results_df["Value"][19] = results_df["Value"][19] / 1e-9
-    # results_df["Value"][20] = results_df["Value"][20] / 1e-9
     results_df.loc[5, "Value"] /= 1e-9
     results_df.loc[7, "Value"] /= 1e-9
     results_df.loc[9, "Value"] /= 1e-9

@@ -1,15 +1,19 @@
 import numpy as np
 from scipy.optimize import curve_fit
 import traceback
+import logging
+
 
 # gaussian distribution
 def gauss(x, amp, sigma, mu):
     f = (amp / (sigma * np.sqrt(2 * np.pi))) * np.exp(-0.5 * ((x - mu) / sigma) ** 2)
     return f
 
+
 # general function for a sinusoid
 def sin_func(x, a, b, c, d):
     return a * np.sin(2 * np.pi * b * x + c) + d
+
 
 # calculate the fwhm of a gaussian distribution
 def fwhm(
@@ -34,6 +38,7 @@ def fwhm(
     fwhm = fwhm_pts / fs
 
     return fwhm
+
 
 # get the indices for the upper and lower envelope of the voltage signal
 # https://stackoverflow.com/questions/34235530/how-to-get-high-and-low-envelope-of-a-signal
@@ -71,6 +76,7 @@ def hl_envelopes_idx(s, dmin=1, dmax=1, split=False):
 
     return lmin, lmax
 
+
 # function to estimate the instantaneous uncertainty for all points in time
 def instantaneous_uncertainty_analysis(sdf_out, vc_out, cen, **inputs):
     # unpack needed variables
@@ -106,7 +112,7 @@ def instantaneous_uncertainty_analysis(sdf_out, vc_out, cen, **inputs):
         )
     except Exception:
         # if sin fitting doesn't work set the fitting parameters to be zeros
-        print(traceback.format_exc())
+        logging.error(traceback.format_exc())
         popt = [0, 0, 0, 0]
         pcov = [0, 0, 0, 0]
 

@@ -6,6 +6,7 @@ from itertools import islice
 import matplotlib.pyplot as plt
 import seaborn as sns
 import argparse
+import logging
 
 
 def load_csv(file_path):
@@ -84,7 +85,7 @@ def calculate_correlation(data_dict):
             if any(math.isnan(x) for x in input_values_all) or any(
                 math.isnan(x) for x in input_values_all
             ):
-                print("list(s) for correlation contain NaN values.")
+                logging.error("list(s) for correlation contain NaN values.")
 
             # Calculate correlation for all samples
             correlation, _ = pearsonr(input_values_all, result_values_all)
@@ -132,23 +133,9 @@ def calculate_correlation(data_dict):
             input_values_all = []
             result_values_all = []
 
-            # try:
-            #     for file_data in data_dict.values():
-            #         input_values_all.append(float(file_data["inputs"][input_var]))
-            #         result_values_all.append(float(file_data["results"][result_var]))
-            # except KeyError as e:
-            #     print(f"Exception: {e}")
-            #     continue
-
             # for file_data in data_dict.values():
             for file_prefix in data_dict.keys():
                 file_data = data_dict[file_prefix]
-                # try:
-                #     input_values_all.append(float(file_data["inputs"][input_var]))
-                #     result_values_all.append(float(file_data["results"][result_var]))
-                # except KeyError as e:
-                #     print(f"Exception for {file_prefix}: {e}")
-                #     continue
                 if (
                     input_var in file_data["inputs"].keys()
                     and result_var in file_data["results"].keys()
@@ -157,7 +144,7 @@ def calculate_correlation(data_dict):
                     result_values_all.append(float(file_data["results"][result_var]))
 
             # Calculate correlation for all samples
-            print(
+            logging.info(
                 f"inp:{input_var},len:{len(input_values_all)} to out:{result_var},len:{len(result_values_all)}"
             )
             correlation_coefficient, p_value = pearsonr(
