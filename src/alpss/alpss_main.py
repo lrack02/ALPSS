@@ -108,7 +108,7 @@ def alpss_main(**inputs):
 
             # change directory to where the data is stored
             data = pd.read_csv(
-                os.path.join(inputs["exp_data_dir"], inputs["filename"]),
+                inputs["filename"],
                 skiprows=int(rows_to_skip),
                 nrows=int(nrows),
             )

@@ -53,7 +53,7 @@ class TestExampleFile(unittest.TestCase):
             "theta": 0,
             "delta_theta": 5,
             "exp_data_dir": "/srv/hemi01-j01/ALPSS/tests/input_data",
-            "out_files_dir": "/srv/hemi01-j01/ALPSS/tests/output_data2",
+            "out_files_dir": "/srv/hemi01-j01/ALPSS/tests/output_data",
             "display_plots": "yes",
             "spall_calculation": "yes",
             "plot_figsize": (30, 10),
