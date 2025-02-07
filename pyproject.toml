@@ -32,6 +32,7 @@ watchdog = "*"
 opencv-python = "*"
 findiff = "*"
 pytest = "^8.3.4"
+IPython = "*"
 
 [tool.poetry.scripts]
 alpss = "alpss.commands:run_alpss"
