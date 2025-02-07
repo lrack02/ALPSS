@@ -1,11 +1,15 @@
 import pytest
-
+import os
 
 @pytest.fixture
 def valid_inputs():
+
+    base_dir = os.path.dirname(__file__)  # Get the directory of conftest.py
+    filepath = os.path.join(base_dir, "input_data", "example_file.csv")
+    out_files_dir = os.path.join(base_dir, "output_data")
+
     return {
-        # "filename": "example_file.csv",
-        "filepath": "input_data/example_file.csv",
+        "filepath": filepath,
         "save_data": "yes",
         "start_time_user": "none",
         "header_lines": 1,
@@ -46,13 +50,9 @@ def valid_inputs():
         "delta_lam": 8e-18,
         "theta": 0,
         "delta_theta": 5,
-        "out_files_dir": "output_data/",
+        "out_files_dir": out_files_dir,
         "display_plots": "no",
         "spall_calculation": "yes",
-        # "exp_data_dir": "/Users/jakediamond/Desktop/Hopkins School Work/HEMI Research/Project 2 - High Throughput Testing/ALPSS_DUMMY/ALPSS/input_data",
-        # "out_files_dir": "/Users/jakediamond/Desktop/Hopkins School Work/HEMI Research/Project 2 - High Throughput Testing/ALPSS_DUMMY/ALPSS/output_data",
-        # "display_plots": "yes",
-        # "spall_calculation": "yes",
         "plot_figsize": (30, 10),
         "plot_dpi": 300,
     }

@@ -1,4 +1,4 @@
-filepath,input_data/example_file.csv
+filepath,/srv/hemi01-j01/ALPSS/tests/input_data/example_file.csv
 save_data,yes
 start_time_user,none
 header_lines,1
@@ -39,7 +39,7 @@ delta_C0,23
 delta_lam,8e-18
 theta,0
 delta_theta,5
-out_files_dir,output_data/
+out_files_dir,/srv/hemi01-j01/ALPSS/tests/output_data
 display_plots,no
 spall_calculation,yes
 plot_figsize,"(30, 10)"
