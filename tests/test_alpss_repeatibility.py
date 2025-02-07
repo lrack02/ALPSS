@@ -34,5 +34,5 @@ def test_alpss_main_output(valid_inputs):
     for key, expected_value in expected_values.items():
         assert key in result_dict, f"Key '{key}' not found in the results."
         assert result_dict[key] == pytest.approx(
-            expected_value, abs=1
+            expected_value, rel=1e-9
         ), f"Mismatch for '{key}': expected {expected_value}, got {result_dict[key]}"
