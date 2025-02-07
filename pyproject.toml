@@ -23,11 +23,11 @@ classifiers = [
 ]
 
 [tool.poetry.dependencies]
-python = "^3.8"
-numpy = "<2"
+python = "^3.9"
+numpy = ">=1.17"
+scipy = ">1.12"
 pandas = "*"
 matplotlib = "*"
-scipy = "*"
 watchdog = "*"
 opencv-python = "*"
 findiff = "*"
