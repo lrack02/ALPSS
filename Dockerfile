@@ -15,5 +15,5 @@ ARG PACKAGE_VERSION=latest
 # Install the correct package version from PyPI
 RUN pip install --pre alpss==$PACKAGE_VERSION
 
-# Set the entrypoint (modify as needed)
-CMD ["python", "-m", "alpss"]
+CMD ["/bin/bash"]
+

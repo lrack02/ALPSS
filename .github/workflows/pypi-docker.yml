@@ -26,10 +26,21 @@ jobs:
         id: get_version
         run: echo "VERSION=$(poetry version -s)" >> $GITHUB_ENV
 
+      - name: Check if version already exists on PyPI
+        id: check_version
+        continue-on-error: true
+        run: |
+          curl -sSf https://pypi.org/pypi/alpss/${{ env.VERSION }}/json > /dev/null && echo "EXISTS=true" >> $GITHUB_ENV || echo "EXISTS=false" >> $GITHUB_ENV
+
       - name: Build and Publish to PyPI
+        if: env.EXISTS == 'false'
         run: |
           poetry build
           poetry publish --username __token__ --password ${{ secrets.PYPI_API_TOKEN }}
+
+      - name: Skip PyPI publish if version exists
+        if: env.EXISTS == 'true'
+        run: echo "Version ${{ env.VERSION }} already exists on PyPI. Skipping release."
 
   docker-publish:
     needs: pypi-release # Ensures PyPI release completes first
@@ -54,7 +65,7 @@ jobs:
       - name: Log in to Docker Hub
         uses: docker/login-action@v3
         with:
-          username: ${{ secrets.DOCKER_USERNAME }}
+          username: ${{ secrets.DOCKER_USERNAME }} # Should be a member of openmsi
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build and Push Docker Image
@@ -62,8 +73,8 @@ jobs:
         with:
           push: true
           tags: |
-            ${{ secrets.DOCKER_USERNAME }}/alpss:latest
-            ${{ secrets.DOCKER_USERNAME }}/alpss:${{ env.VERSION }}
+            openmsi/alpss:latest
+            openmsi/alpss:${{ env.VERSION }}
           build-args: |
             PACKAGE_VERSION=${{ env.VERSION }}
           file: ./Dockerfile
