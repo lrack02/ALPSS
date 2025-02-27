@@ -2,6 +2,12 @@ import pytest
 import os
 
 @pytest.fixture
+def config_file_path():
+    """Fixture to provide the path to the test config file."""
+    return os.path.join(os.path.dirname(__file__), "input_data", "config.json")
+
+
+@pytest.fixture
 def valid_inputs():
 
     base_dir = os.path.dirname(__file__)  # Get the directory of conftest.py
@@ -55,4 +61,27 @@ def valid_inputs():
         "spall_calculation": "yes",
         "plot_figsize": (30, 10),
         "plot_dpi": 300,
+    }
+
+@pytest.fixture
+def expected_values():
+    """Fixture to provide the expected values for ALPSS tests."""
+    return {
+        "Velocity at Max Compression": 828.0849443007512,
+        "Time at Max Compression": 6.300750500023988e-07,
+        "Velocity at Max Tension": 464.46467142515036,
+        "Time at Max Tension": 6.476500600052781e-07,
+        "Velocity at Recompression": 574.0505816377753,
+        "Time at Recompression": 6.557375600013682e-07,
+        "Carrier Frequency": 2232111412.128054,
+        "Spall Strength": 1427973173.609772,
+        "Spall Strength Uncertainty": 10692214.866814513,
+        "Strain Rate": 2278592.4760455955,
+        "Strain Rate Uncertainty": 537339.1422056587,
+        "Peak Shock Stress": 3251972384.76348,
+        "Spect Time Res": 9.625000834177745e-10,
+        "Spect Freq Res": 15624998.645815466,
+        "Spect Velocity Res": 12.089538014726124,
+        "Signal Start Time": 6.140750532205402e-07,
+        "Smoothing Characteristic Time": 2.9298752539258723e-09,
     }

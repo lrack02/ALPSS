@@ -52,7 +52,7 @@ def alpss_main_with_config(config=None):
     config_data = load_json_config(config)
 
     # Run ALPSS with the loaded config
-    alpss_main(**config_data)
+    return alpss_main(**config_data)
 
 
 # if __name__ == "__main__":
