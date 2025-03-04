@@ -1,6 +1,7 @@
 import numpy as np
 from scipy import signal
 import traceback
+import logging
 
 
 # function to pull out important points on the spall signal
@@ -67,8 +68,9 @@ def spall_analysis(vc_out, iua_out, **inputs):
 
         # if the program fails to find the peak and pullback velocities, then input nan's and continue with the program
         except Exception:
-            print(traceback.format_exc())
-            print("Could not locate the peak and/or pullback velocity")
+            logging.error("Could not locate the peak and/or pullback velocity")
+            logging.error(traceback.format_exc())
+
             t_max_comp = np.nan
             t_max_ten = np.nan
             v_max_comp = np.nan
@@ -94,8 +96,8 @@ def spall_analysis(vc_out, iua_out, **inputs):
 
         # if finding the recompression peak fails then input nan's and continue
         except Exception:
-            print(traceback.format_exc())
-            print("Could not locate the recompression velocity")
+            logging.error("Could not locate the recompression velocity")
+            logging.error(traceback.format_exc())
             t_rc = np.nan
             v_rc = np.nan
 

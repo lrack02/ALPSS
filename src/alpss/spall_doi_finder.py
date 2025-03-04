@@ -15,7 +15,7 @@ def spall_doi_finder(**inputs):
     nrows = inputs["time_to_take"] / t_step
 
     # change directory to where the data is stored
-    fname = os.path.join(inputs["exp_data_dir"], inputs["filename"])
+    fname = inputs["filepath"]
     data = pd.read_csv(fname, skiprows=int(rows_to_skip), nrows=int(nrows))
 
     # rename the columns of the data

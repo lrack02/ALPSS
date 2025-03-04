@@ -1,17 +1,25 @@
 import os
-from alpss.spall_doi_finder import *
-from alpss.plotting import *
-from alpss.carrier_frequency import *
-from alpss.carrier_filter import *
-from alpss.velocity_calculation import *
-from alpss.spall_analysis import *
-from alpss.full_uncertainty_analysis import *
-from alpss.instantaneous_uncertainty_analysis import *
-from alpss.saving import *
+from alpss.spall_doi_finder import spall_doi_finder
+from alpss.plotting import plot_results, plot_voltage
+from alpss.carrier_frequency import carrier_frequency
+from alpss.carrier_filter import carrier_filter
+from alpss.velocity_calculation import velocity_calculation
+from alpss.spall_analysis import spall_analysis
+from alpss.full_uncertainty_analysis import full_uncertainty_analysis
+from alpss.instantaneous_uncertainty_analysis import instantaneous_uncertainty_analysis
+from alpss.saving import save
 from datetime import datetime
 import traceback
-import matplotlib.pyplot as plt
-import pandas as pd
+import logging
+
+logging.basicConfig(
+    level=logging.ERROR,  # Minimum level of messages to log (can be DEBUG, INFO, WARNING, ERROR, CRITICAL)
+    format="%(asctime)s - %(levelname)s - %(message)s",  # Log format (include timestamp, level, message)
+    handlers=[
+        logging.FileHandler("error_log.txt"),  # Log to a file
+        logging.StreamHandler(),  # Also log to console
+    ],
+)
 
 
 def validate_inputs(inputs):
@@ -55,7 +63,7 @@ def alpss_main(**inputs):
         end_time = datetime.now()
 
         # function to generate the final figure
-        fig = plotting(
+        fig = plot_results(
             sdf_out,
             cen,
             cf_out,
@@ -72,14 +80,14 @@ def alpss_main(**inputs):
         # MOVED to plotting
         # end final timer and display full runtime
         end_time2 = datetime.now()
-        print(
+        logging.info(
             f"\nFull program runtime (including plotting and saving):\n{end_time2 - start_time}\n"
         )
 
         # return the figure so it can be saved if desired
         # function to save the output files if desired
         if inputs["save_data"] == "yes":
-            return saving(
+            df = save(
                 sdf_out,
                 cen,
                 vc_out,
@@ -91,71 +99,23 @@ def alpss_main(**inputs):
                 fig,
                 **inputs,
             )
+            return fig, df
+
+        return (fig,)
 
     # in case the program throws an error
-    except Exception:
-        # print the traceback for the error
-        print(traceback.format_exc())
+    except Exception as e:
+        logging.error("Error in the execution of the main program:: %s", str(e))
+        logging.error("Traceback: %s", traceback.format_exc())
 
         # attempt to plot the voltage signal from the imported data
         try:
-            # import the desired data. Convert the time to skip and turn into number of rows
-            t_step = 1 / inputs["sample_rate"]
-            rows_to_skip = (
-                inputs["header_lines"] + inputs["time_to_skip"] / t_step
-            )  # skip the header lines too
-            nrows = inputs["time_to_take"] / t_step
+            logging.info("Attempting a fallback visualization of the voltage signal...")
+            plot_voltage(**inputs)
 
-            # change directory to where the data is stored
-            data = pd.read_csv(
-                os.path.join(inputs["exp_data_dir"], inputs["filename"]),
-                skiprows=int(rows_to_skip),
-                nrows=int(nrows),
+        # if that also fails then log the traceback and stop running the program
+        except Exception as e:
+            logging.error(
+                "Error in the fallback visualization of the voltage signal: %s", str(e)
             )
-
-            # rename the columns of the data
-            data.columns = ["Time", "Ampl"]
-
-            # put the data into numpy arrays. Zero the time data
-            time = data["Time"].to_numpy()
-            time = time - time[0]
-            voltage = data["Ampl"].to_numpy()
-
-            # calculate the sample rate from the experimental data
-            fs = 1 / np.mean(np.diff(time))
-
-            # calculate the short time fourier transform
-            f, t, Zxx = stft(voltage, fs, **inputs)
-
-            # calculate magnitude of Zxx
-            mag = np.abs(Zxx)
-
-            # plotting
-            fig, (ax1, ax2) = plt.subplots(
-                1, 2, num=2, figsize=(11, 4), dpi=300, clear=True
-            )
-            ax1.plot(time / 1e-9, voltage / 1e-3)
-            ax1.set_xlabel("Time (ns)")
-            ax1.set_ylabel("Voltage (mV)")
-            ax2.imshow(
-                10 * np.log10(mag**2),
-                aspect="auto",
-                origin="lower",
-                interpolation="none",
-                extent=[t[0] / 1e-9, t[-1] / 1e-9, f[0] / 1e9, f[-1] / 1e9],
-                cmap=inputs["cmap"],
-            )
-            ax2.set_xlabel("Time (ns)")
-            ax2.set_ylabel("Frequency (GHz)")
-            fig.suptitle("ERROR: Program Failed", c="r", fontsize=16)
-
-            plt.tight_layout()
-            if inputs["save_data"] == "yes":
-                fname = os.path.join(inputs["out_files_dir"], inputs["filename"][0:-4])
-                fig.savefig(f"{fname}--error_plot.png")
-            if inputs["display_plots"] == "yes":
-                plt.show()
-
-        # if that also fails then print the traceback and stop running the program
-        except Exception:
-            print(traceback.format_exc())
+            logging.error("Traceback: %s", traceback.format_exc())
