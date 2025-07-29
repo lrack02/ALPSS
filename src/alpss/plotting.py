@@ -23,7 +23,7 @@ def plot_results(
         num=1, figsize=inputs["plot_figsize"], dpi=inputs["plot_dpi"], clear=True
     )
     ax1 = plt.subplot2grid((3, 5), (0, 0))  # voltage data
-    ax2 = plt.subplot2grid((3, 5), (0, 1))  # noise distribution histogram
+    ax2 = plt.subplot2grid((3, 5), (0, 1))  # FFT magnitudes for carrier filter OR noise distribution histogram
     ax3 = plt.subplot2grid((3, 5), (1, 0))  # imported voltage spectrogram
     ax4 = plt.subplot2grid((3, 5), (1, 1))  # thresholded spectrogram
     ax5 = plt.subplot2grid((3, 5), (2, 0))  # spectrogram of the ROI
@@ -75,10 +75,32 @@ def plot_results(
     ax1.set_title("Voltage Data")
 
     # noise distribution histogram
-    ax2.hist(iua_out["noise"] * 1e3, bins=50, rwidth=0.8)
-    ax2.set_xlabel("Noise (mV)")
-    ax2.set_ylabel("Counts")
-    ax2.set_title("Voltage Noise")
+    if inputs["carrier_filter_type"]=='sin_fit_subtract':
+        mask_window = (cf_out["freq"]>inputs["freq_min"]) & (cf_out["freq"]<inputs["freq_max"])
+        ax2.plot(
+            cf_out["freq"][mask_window]*1e-9,
+            np.abs(cf_out["fft_vals"][mask_window])*1e3,
+            label = "FFT Analysis Total",
+            c = 'b')
+        
+        mask_carrier = (cf_out["freq"]>(cen-inputs["wid"]/2)) & (cf_out["freq"]<(cen+inputs["wid"]/2))
+
+        ax2.plot(
+            cf_out["freq"][mask_carrier]*1e-9,
+            np.abs(cf_out["fft_vals"][mask_carrier])*1e3,
+            label = "Isolated Carrier Band",
+            c = 'r')
+
+        ax2.set_xlabel("Frequency (GHz)")
+        ax2.set_ylabel("Magnitude")
+        ax2.set_xlim([inputs["freq_min"]*1e-9,inputs["freq_max"]*1e-9])
+        ax2.legend(loc="upper right")
+        ax2.set_title("FFT Carrier Band")
+    else: 
+        ax2.hist(iua_out["noise"] * 1e3, bins=50, rwidth=0.8)
+        ax2.set_xlabel("Noise (mV)")
+        ax2.set_ylabel("Counts")
+        ax2.set_title("Voltage Noise")
 
     # imported voltage spectrogram and a rectangle to show the ROI
     plt3 = ax3.imshow(

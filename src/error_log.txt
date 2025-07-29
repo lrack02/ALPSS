@@ -1,0 +1,300 @@
+2025-07-29 12:06:04,831 - ERROR - Error in the execution of the main program:: 'filepath'
+2025-07-29 12:06:04,835 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 18, in spall_doi_finder
+    fname = inputs["filepath"]
+            ~~~~~~^^^^^^^^^^^^
+KeyError: 'filepath'
+
+2025-07-29 12:06:04,837 - ERROR - Error in the fallback visualization of the voltage signal: 'filepath'
+2025-07-29 12:06:04,840 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 18, in spall_doi_finder
+    fname = inputs["filepath"]
+            ~~~~~~^^^^^^^^^^^^
+KeyError: 'filepath'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 114, in alpss_main
+    plot_voltage(**inputs)
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\plotting.py", line 423, in plot_voltage
+    inputs["filepath"],
+    ~~~~~~^^^^^^^^^^^^
+KeyError: 'filepath'
+
+2025-07-29 12:06:41,440 - ERROR - Error in the execution of the main program:: 'filepath'
+2025-07-29 12:06:41,445 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 18, in spall_doi_finder
+    fname = inputs["filepath"]
+            ~~~~~~^^^^^^^^^^^^
+KeyError: 'filepath'
+
+2025-07-29 12:06:41,447 - ERROR - Error in the fallback visualization of the voltage signal: 'filepath'
+2025-07-29 12:06:41,450 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 18, in spall_doi_finder
+    fname = inputs["filepath"]
+            ~~~~~~^^^^^^^^^^^^
+KeyError: 'filepath'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 114, in alpss_main
+    plot_voltage(**inputs)
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\plotting.py", line 423, in plot_voltage
+    inputs["filepath"],
+    ~~~~~~^^^^^^^^^^^^
+KeyError: 'filepath'
+
+2025-07-29 13:19:40,213 - ERROR - Error in the execution of the main program:: 'filepath'
+2025-07-29 13:19:40,232 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 66, in alpss_main
+    fig = plot_results(
+          ^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\plotting.py", line 376, in plot_results
+    inputs["filepath"],
+    ~~~~~~^^^^^^^^^^^^
+KeyError: 'filepath'
+
+2025-07-29 13:19:40,234 - ERROR - Error in the fallback visualization of the voltage signal: 'filepath'
+2025-07-29 13:19:40,237 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 66, in alpss_main
+    fig = plot_results(
+          ^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\plotting.py", line 376, in plot_results
+    inputs["filepath"],
+    ~~~~~~^^^^^^^^^^^^
+KeyError: 'filepath'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 114, in alpss_main
+    plot_voltage(**inputs)
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\plotting.py", line 423, in plot_voltage
+    inputs["filepath"],
+    ~~~~~~^^^^^^^^^^^^
+KeyError: 'filepath'
+
+2025-07-29 13:22:43,220 - ERROR - Error in the execution of the main program:: 'filepath'
+2025-07-29 13:22:43,363 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 66, in alpss_main
+    fig = plot_results(
+          ^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\plotting.py", line 376, in plot_results
+    inputs["filename"],
+    ~~~~~~^^^^^^^^^^^^
+KeyError: 'filepath'
+
+2025-07-29 13:22:43,365 - ERROR - Error in the fallback visualization of the voltage signal: 'filepath'
+2025-07-29 13:22:43,368 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 66, in alpss_main
+    fig = plot_results(
+          ^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\plotting.py", line 376, in plot_results
+    inputs["filename"],
+    ~~~~~~^^^^^^^^^^^^
+KeyError: 'filepath'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 114, in alpss_main
+    plot_voltage(**inputs)
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\plotting.py", line 423, in plot_voltage
+    inputs["filepath"],
+    ~~~~~~^^^^^^^^^^^^
+KeyError: 'filepath'
+
+2025-07-29 13:25:00,594 - ERROR - Error in the execution of the main program:: 'filepath'
+2025-07-29 13:25:00,723 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 90, in alpss_main
+    df = save(
+         ^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\saving.py", line 11, in save
+    fname = os.path.join(inputs["out_files_dir"], os.path.basename(inputs["filepath"]))
+                                                                   ~~~~~~^^^^^^^^^^^^
+KeyError: 'filepath'
+
+2025-07-29 13:25:00,725 - ERROR - Error in the fallback visualization of the voltage signal: 'filepath'
+2025-07-29 13:25:00,730 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 90, in alpss_main
+    df = save(
+         ^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\saving.py", line 11, in save
+    fname = os.path.join(inputs["out_files_dir"], os.path.basename(inputs["filepath"]))
+                                                                   ~~~~~~^^^^^^^^^^^^
+KeyError: 'filepath'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 114, in alpss_main
+    plot_voltage(**inputs)
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\plotting.py", line 423, in plot_voltage
+    inputs["filepath"],
+    ~~~~~~^^^^^^^^^^^^
+KeyError: 'filepath'
+
+2025-07-29 13:29:11,209 - ERROR - Error in the execution of the main program:: 'filepath'
+2025-07-29 13:29:11,321 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 90, in alpss_main
+    df = save(
+         ^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\saving.py", line 11, in save
+    fname = os.path.join(inputs["out_files_dir"], os.path.basename(inputs["filepath"]))
+                                                                   ~~~~~~^^^^^^^^^^^^
+KeyError: 'filepath'
+
+2025-07-29 13:29:13,295 - ERROR - Error in the fallback visualization of the voltage signal: 'filepath'
+2025-07-29 13:29:13,300 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 90, in alpss_main
+    df = save(
+         ^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\saving.py", line 11, in save
+    fname = os.path.join(inputs["out_files_dir"], os.path.basename(inputs["filepath"]))
+                                                                   ~~~~~~^^^^^^^^^^^^
+KeyError: 'filepath'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 114, in alpss_main
+    plot_voltage(**inputs)
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\plotting.py", line 465, in plot_voltage
+    inputs["out_files_dir"], os.path.basename(inputs["filepath"])
+                                              ~~~~~~^^^^^^^^^^^^
+KeyError: 'filepath'
+
+2025-07-29 13:32:49,903 - ERROR - Error in the execution of the main program:: 'filepath'
+2025-07-29 13:32:49,914 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 90, in alpss_main
+    df = save(
+         ^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\saving.py", line 11, in save
+    fname = os.path.join(inputs["out_files_dir"], os.path.basename(inputs["filepath"]))
+                                                                   ~~~~~~^^^^^^^^^^^^
+KeyError: 'filepath'
+
+2025-07-29 13:32:52,154 - ERROR - Error in the fallback visualization of the voltage signal: 'filepath'
+2025-07-29 13:32:52,468 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 90, in alpss_main
+    df = save(
+         ^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\saving.py", line 11, in save
+    fname = os.path.join(inputs["out_files_dir"], os.path.basename(inputs["filepath"]))
+                                                                   ~~~~~~^^^^^^^^^^^^
+KeyError: 'filepath'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 114, in alpss_main
+    plot_voltage(**inputs)
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\plotting.py", line 465, in plot_voltage
+    fname = os.path.join(
+                          
+KeyError: 'filepath'
+
+2025-07-29 13:33:34,057 - ERROR - Error in the execution of the main program:: 'filepath'
+2025-07-29 13:33:34,185 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 90, in alpss_main
+    df = save(
+         ^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\saving.py", line 11, in save
+    fname = os.path.join(inputs["out_files_dir"], os.path.basename(inputs["filepath"]))
+                                                                   ~~~~~~^^^^^^^^^^^^
+KeyError: 'filepath'
+
+2025-07-29 13:33:34,188 - ERROR - Error in the fallback visualization of the voltage signal: 'filepath'
+2025-07-29 13:33:34,192 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 90, in alpss_main
+    df = save(
+         ^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\saving.py", line 11, in save
+    fname = os.path.join(inputs["out_files_dir"], os.path.basename(inputs["filepath"]))
+                                                                   ~~~~~~^^^^^^^^^^^^
+KeyError: 'filepath'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 114, in alpss_main
+    plot_voltage(**inputs)
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\plotting.py", line 424, in plot_voltage
+    inputs["filepath"],
+    ~~~~~~^^^^^^^^^^^^
+KeyError: 'filepath'
+
+2025-07-29 13:41:25,331 - ERROR - Error in the execution of the main program:: 'filepath'
+2025-07-29 13:41:25,486 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 90, in alpss_main
+    df = save(
+         ^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\saving.py", line 11, in save
+    fname = os.path.join(inputs["out_files_dir"], os.path.basename(inputs["filepath"]))
+                                                                   ~~~~~~^^^^^^^^^^^^
+KeyError: 'filepath'
+
+2025-07-29 13:41:25,488 - ERROR - Error in the fallback visualization of the voltage signal: 'filepath'
+2025-07-29 13:41:25,494 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 90, in alpss_main
+    df = save(
+         ^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\saving.py", line 11, in save
+    fname = os.path.join(inputs["out_files_dir"], os.path.basename(inputs["filepath"]))
+                                                                   ~~~~~~^^^^^^^^^^^^
+KeyError: 'filepath'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 114, in alpss_main
+    plot_voltage(**inputs)
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\plotting.py", line 423, in plot_voltage
+    os.path.join(inputs["exp_data_dir"],inputs["filepath"]),
+                                        ~~~~~~^^^^^^^^^^^^
+KeyError: 'filepath'
+
+2025-07-29 14:24:10,237 - ERROR - Error in the execution of the main program:: cannot access local variable 'mask_display' where it is not associated with a value
+2025-07-29 14:24:10,244 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 48, in alpss_main
+    cf_out = carrier_filter(sdf_out, cen, **inputs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\carrier_filter.py", line 118, in carrier_filter
+    "freq": freq[mask_display],
+                 ^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'mask_display' where it is not associated with a value
+
+2025-07-29 14:48:57,837 - ERROR - Error in the execution of the main program:: cannot access local variable 'voltage_filt' where it is not associated with a value
+2025-07-29 14:48:57,843 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 48, in alpss_main
+    cf_out = carrier_filter(sdf_out, cen, **inputs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\carrier_filter.py", line 107, in carrier_filter
+    f_filt, t_filt, Zxx_filt = stft(np.real(voltage_filt), fs, **inputs)
+                                            ^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'voltage_filt' where it is not associated with a value
+
+2025-07-29 14:49:38,677 - ERROR - Error in the execution of the main program:: cannot access local variable 'voltage_filt' where it is not associated with a value
+2025-07-29 14:49:38,700 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 48, in alpss_main
+    cf_out = carrier_filter(sdf_out, cen, **inputs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\carrier_filter.py", line 107, in carrier_filter
+    f_filt, t_filt, Zxx_filt = stft(np.real(voltage_filt), fs, **inputs)
+                                            ^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'voltage_filt' where it is not associated with a value
+
