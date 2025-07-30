@@ -225,6 +225,19 @@ def plot_results(
         label="Signal Envelope",
         c="tab:red",
     )
+    if inputs["carrier_filter_type"] == "sin_fit_subtract":
+        ax7.plot(
+            cf_out["time_fitting"] / 1e-9, 
+            cf_out["carrier_fitting"] * 1e3, 
+            label="Carrier Band",
+            c='tab:green')
+        ax7.plot(
+            cf_out["time_fitting"] / 1e-9, 
+            cf_out["sin_fitting"] * 1e3, 
+            label="Sin Fit",
+            c='r', 
+            ls='--',
+            alpha=0.5)
     ax7.plot(vc_out["time_f"] / 1e-9, iua_out["env_min_interp"] * 1e3, c="tab:red")
     ax7.set_xlabel("Time (ns)")
     ax7.set_ylabel("Voltage (mV)")
