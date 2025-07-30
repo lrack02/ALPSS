@@ -102,6 +102,13 @@ def carrier_filter(sdf_out, cen, **inputs):
         # prepare the fft freqs and vals for plotting
         display_vals = fft_vals[freq>0]
         display_freq = freq[freq>0]
+    else: 
+        voltage_filt = voltage
+        time_fitting = 'none'
+        time_domain_carrier = 'none'
+        sin_fit = 'none'
+        display_freq = 'none'
+        display_vals = 'none'
 
     # perform a stft on the filtered voltage data. Only the real part as to not get a two sided spectrogram
     f_filt, t_filt, Zxx_filt = stft(np.real(voltage_filt), fs, **inputs)
