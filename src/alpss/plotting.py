@@ -129,6 +129,7 @@ def plot_results(
         linewidth=0.75,
         linestyle="-",
     )
+    ax3.set_ylim([0,10])
     ax3.add_patch(win)
     ax3.set_xlabel("Time (ns)")
     ax3.set_ylabel("Frequency (GHz)")
