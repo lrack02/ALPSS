@@ -401,6 +401,8 @@ def plot_results(
         ax10.set_ylim([0, 100])
         ax11.set_ylim([0, iua_out["freq_uncert_scaling"] * (inputs["lam"] / 2)])
 
+    fname = os.path.basename(inputs["filepath"])
+
     # table to show results of the run
     run_data1 = {
         "Name": [
@@ -416,7 +418,7 @@ def plot_results(
         "Value": [
             start_time.strftime("%b %d %Y"),
             start_time.strftime("%I:%M %p"),
-            inputs["filepath"],
+            fname,
             (end_time - start_time),
             round(iua_out["tau"] * 1e9, 2),
             round(
