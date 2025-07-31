@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import cv2 as cv
 from alpss.utils import stft
+from numpy.fft import fft,fftfreq
 
 
 # function to find the specific domain of interest in the larger signal
@@ -120,6 +121,74 @@ def spall_doi_finder(**inputs):
         mag_doi = mag_cut[:, t_doi_start_spec_idx:t_doi_end_spec_idx]
         power_doi = 10 * np.log10(mag_doi**2)
 
+    elif inputs["start_time_user"]=="cusum": 
+        def cusum(signal, mu0, mu1, sigma, h, k):
+            """
+            Detect a single mean shift from mu0 to mu1 using CUSUM.
+            Returns:
+            - Detection index
+            - Estimated change point index
+            - Full G[k] array
+            """
+            # Score for general mean change
+            Z = (signal - mu0)/(np.sqrt(sigma))
+            s = -Z - k
+            # s = ((mu1 - mu0) / sigma) * (signal - mu0) - ((mu0**2 - mu1**2) / (2 * sigma))
+            G = np.zeros_like(s)
+
+            for k in range(1, len(s)):
+                G[k] = max(G[k-1] + s[k], 0)
+
+                if G[k] > h:
+                    detect_idx = k
+                    S = np.cumsum(s[:detect_idx])
+                    change_idx = np.argmin(S)
+                    return detect_idx, change_idx, G, s
+
+            # If no change detected
+            return None, None, G, s
+        
+        # Collect necessary parameters
+        carrier_band_time = inputs["carrier_band_time"]
+        k=inputs["cusum_offset"]
+        h=inputs["cusum_threshold"]
+
+        # Carrier band Frequency
+        carrier_mask = time < carrier_band_time
+        carrier_fft_vals = fft(voltage[carrier_mask])
+        carrier_fft_freqs = fftfreq(voltage[carrier_mask].size,1/fs)
+        mask3 = carrier_fft_freqs > 0
+        max_idx = np.argmax(np.abs(carrier_fft_vals*mask3))
+        cen = carrier_fft_freqs[max_idx]
+        idx = np.argmin(np.abs(f-cen))
+        signal = mag[idx,:]
+        mask4 = t < carrier_band_time
+        mask5 = t > (t.max()-carrier_band_time)
+        mu0 = np.mean(signal[mask4])
+        mu1 =  0  # Expected post-change signal level
+        sigma0 = np.var(signal[mask4])
+
+        detection_indices, change_indices, G, s = cusum(signal, mu0, mu1, sigma0, h, k)
+
+        detection_time = t[change_indices]
+
+        # these params become nan because they are only needed if the program
+        # is finding the signal start time automatically
+        f_doi_top_line_clean = np.nan
+        carr_idx = np.nan
+        f_doi_carr_top_idx = np.nan
+
+        # use the user input signal start time to define the domain of interest
+        t_start_detected = detection_time
+        t_start_corrected = t_start_detected + inputs["start_time_correction"]
+        t_doi_start = t_start_corrected - inputs["t_before"]
+        t_doi_end = t_start_corrected + inputs["t_after"]
+
+        t_doi_start_spec_idx = np.argmin(np.abs(t - t_doi_start))
+        t_doi_end_spec_idx = np.argmin(np.abs(t - t_doi_end))
+        mag_doi = mag_cut[:, t_doi_start_spec_idx:t_doi_end_spec_idx]
+        power_doi = 10 * np.log10(mag_doi**2)
+        
     # if using a user input for the signal start time
     else:
         # these params become nan because they are only needed if the program
