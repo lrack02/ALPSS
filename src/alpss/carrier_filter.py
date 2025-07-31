@@ -20,7 +20,8 @@ def carrier_filter(sdf_out, cen, **inputs):
     f_max = inputs["freq_max"]
     t_doi_start = sdf_out["t_doi_start"]
     t_doi_end = sdf_out["t_doi_end"]
-    carrier_fitting_time = inputs["carrier_fitting_time"]
+    t_fit_begin = inputs["t_fit_begin"]
+    t_fit_end = inputs["t_fit_end"]
 
     # get the index in the time array where the signal begins
     sig_start_idx = np.argmin(np.abs(time - t_start_corrected))
@@ -52,9 +53,8 @@ def carrier_filter(sdf_out, cen, **inputs):
 
     elif inputs["carrier_filter_type"] == 'sin_fit_subtract':
         all_freq = fftfreq(voltage.size,1/fs)
-
-        tmin = 10e-9
-        tmax = carrier_fitting_time
+        tmin = t_fit_begin
+        tmax = t_fit_end
 
         # perform FFT of carrier band from time tmin to tmax to determine find peaks from both carrier and dopplar signal
         carrier_analysis_time_mask = (time>(t_start_corrected + tmin)) & (time<(t_start_corrected + tmax))
