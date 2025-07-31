@@ -8,7 +8,7 @@ from IPython.display import display
 def save(
     sdf_out, cen, vc_out, sa_out, iua_out, fua_out, start_time, end_time, fig, **inputs
 ):
-    fname = os.path.join(inputs["out_files_dir"], os.path.basename(inputs["filepath"]))
+    fname = os.path.join(inputs["out_files_dir"], os.path.basename(inputs["filepath"])).replace(".csv","")
 
     # save the plots
     fig.savefig(
