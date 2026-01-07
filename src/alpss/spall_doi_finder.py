@@ -171,6 +171,7 @@ def spall_doi_finder(**inputs):
         detection_indices, change_indices, G, s = cusum(signal, mu0, mu1, sigma0, h, k)
 
         detection_time = t[change_indices]
+        print(detection_time)
 
         # these params become nan because they are only needed if the program
         # is finding the signal start time automatically
