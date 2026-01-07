@@ -99,6 +99,9 @@ def carrier_filter(sdf_out, cen, **inputs):
         # prepare the fft freqs and vals for plotting
         display_vals = fft_vals[freq>0]
         display_freq = freq[freq>0]
+
+        fft_vals_filtered = fft(voltage_filt[carrier_analysis_time_mask])
+        display_vals_filtered = fft_vals_filtered[freq>0]
     elif inputs["carrier_filter_type"] == 'none': 
         voltage_filt = voltage
         time_fitting = 'none'
@@ -126,6 +129,12 @@ def carrier_filter(sdf_out, cen, **inputs):
     # save outputs to a dictionary
     cf_out = {
         "voltage_filt": voltage_filt,
+        "time_fitting": time_fitting,
+        "carrier_fitting": time_domain_carrier,
+        "sin_fitting": sin_fit,
+        "freq": display_freq,
+        "fft_vals": display_vals,
+        "fft_vals_filtered": display_vals_filtered,
         "f_filt": f_filt,
         "t_filt": t_filt,
         "Zxx_filt": Zxx_filt,
