@@ -50,6 +50,7 @@ def carrier_filter(sdf_out, cen, **inputs):
         sin_fit = 'none'
         display_freq = 'none'
         display_vals = 'none'
+        display_vals_filtered = 'none'
 
     elif inputs["carrier_filter_type"] == 'sin_fit_subtract':
         all_freq = fftfreq(voltage.size,1/fs)
@@ -112,6 +113,7 @@ def carrier_filter(sdf_out, cen, **inputs):
         sin_fit = 'none'
         display_freq = 'none'
         display_vals = 'none'
+        display_vals_filtered = 'none'
 
     # perform a stft on the filtered voltage data. Only the real part as to not get a two sided spectrogram
     f_filt, t_filt, Zxx_filt = stft(np.real(voltage_filt), fs, **inputs)

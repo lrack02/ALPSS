@@ -6818,3 +6818,191 @@ IndexError: index 2 is out of bounds for axis 0 with size 2
              ^^^^^^^^^^^^
 IndexError: index 3 is out of bounds for axis 0 with size 3
 
+2026-01-07 14:53:11,392 - ERROR - Error in the execution of the main program:: Error tokenizing data. C error: Expected 1 fields in line 23, saw 2
+
+2026-01-07 14:53:11,474 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 20, in spall_doi_finder
+    data = pd.read_csv(fname, skiprows=int(rows_to_skip), nrows=int(nrows))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 626, in _read
+    return parser.read(nrows)
+           ^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1923, in read
+    ) = self._engine.read(  # type: ignore[attr-defined]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\c_parser_wrapper.py", line 234, in read
+    chunks = self._reader.read_low_memory(nrows)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "parsers.pyx", line 850, in pandas._libs.parsers.TextReader.read_low_memory
+  File "parsers.pyx", line 905, in pandas._libs.parsers.TextReader._read_rows
+  File "parsers.pyx", line 874, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "parsers.pyx", line 891, in pandas._libs.parsers.TextReader._check_tokenize_status
+  File "parsers.pyx", line 2061, in pandas._libs.parsers.raise_parser_error
+pandas.errors.ParserError: Error tokenizing data. C error: Expected 1 fields in line 23, saw 2
+
+
+2026-01-07 14:53:11,479 - ERROR - Error in the fallback visualization of the voltage signal: Error tokenizing data. C error: Expected 1 fields in line 23, saw 2
+
+2026-01-07 14:53:11,499 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 20, in spall_doi_finder
+    data = pd.read_csv(fname, skiprows=int(rows_to_skip), nrows=int(nrows))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 626, in _read
+    return parser.read(nrows)
+           ^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1923, in read
+    ) = self._engine.read(  # type: ignore[attr-defined]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\c_parser_wrapper.py", line 234, in read
+    chunks = self._reader.read_low_memory(nrows)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "parsers.pyx", line 850, in pandas._libs.parsers.TextReader.read_low_memory
+  File "parsers.pyx", line 905, in pandas._libs.parsers.TextReader._read_rows
+  File "parsers.pyx", line 874, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "parsers.pyx", line 891, in pandas._libs.parsers.TextReader._check_tokenize_status
+  File "parsers.pyx", line 2061, in pandas._libs.parsers.raise_parser_error
+pandas.errors.ParserError: Error tokenizing data. C error: Expected 1 fields in line 23, saw 2
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 114, in alpss_main
+    plot_voltage(**inputs)
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\plotting.py", line 476, in plot_voltage
+    data = pd.read_csv(
+           ^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 626, in _read
+    return parser.read(nrows)
+           ^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1923, in read
+    ) = self._engine.read(  # type: ignore[attr-defined]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\c_parser_wrapper.py", line 234, in read
+    chunks = self._reader.read_low_memory(nrows)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "parsers.pyx", line 850, in pandas._libs.parsers.TextReader.read_low_memory
+  File "parsers.pyx", line 905, in pandas._libs.parsers.TextReader._read_rows
+  File "parsers.pyx", line 874, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "parsers.pyx", line 891, in pandas._libs.parsers.TextReader._check_tokenize_status
+  File "parsers.pyx", line 2061, in pandas._libs.parsers.raise_parser_error
+pandas.errors.ParserError: Error tokenizing data. C error: Expected 1 fields in line 23, saw 2
+
+
+2026-01-07 14:53:47,370 - ERROR - Could not locate the peak and/or pullback velocity
+2026-01-07 14:53:47,371 - ERROR - Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_analysis.py", line 39, in spall_analysis
+    max_ten_idx = extrema_min[
+                  ^^^^^^^^^^^^
+IndexError: index 2 is out of bounds for axis 0 with size 2
+
+2026-01-07 14:53:47,418 - ERROR - Could not locate the recompression velocity
+2026-01-07 14:53:47,420 - ERROR - Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_analysis.py", line 89, in spall_analysis
+    rc_idx = extrema_max[
+             ^^^^^^^^^^^^
+IndexError: index 3 is out of bounds for axis 0 with size 2
+
+2026-01-07 14:54:51,043 - ERROR - Error in the execution of the main program:: cannot access local variable 'display_vals_filtered' where it is not associated with a value
+2026-01-07 14:54:51,068 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 48, in alpss_main
+    cf_out = carrier_filter(sdf_out, cen, **inputs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\carrier_filter.py", line 138, in carrier_filter
+    "fft_vals_filtered": display_vals_filtered,
+                         ^^^^^^^^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'display_vals_filtered' where it is not associated with a value
+
+2026-01-07 14:56:02,895 - ERROR - Error in the execution of the main program:: cannot access local variable 'display_vals_filtered' where it is not associated with a value
+2026-01-07 14:56:02,896 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 48, in alpss_main
+    cf_out = carrier_filter(sdf_out, cen, **inputs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\carrier_filter.py", line 138, in carrier_filter
+    "fft_vals_filtered": display_vals_filtered,
+                         ^^^^^^^^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'display_vals_filtered' where it is not associated with a value
+
+2026-01-07 15:49:14,821 - ERROR - Error in the execution of the main program:: operands could not be broadcast together with shapes (127999,) (1,1274) 
+2026-01-07 15:49:14,828 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 48, in alpss_main
+    cf_out = carrier_filter(sdf_out, cen, **inputs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\carrier_filter.py", line 27, in carrier_filter
+    sig_start_idx = np.argmin(np.abs(time - t_start_corrected))
+                                     ~~~~~^~~~~~~~~~~~~~~~~~~
+ValueError: operands could not be broadcast together with shapes (127999,) (1,1274) 
+
+2026-01-07 17:19:34,238 - ERROR - Error in the execution of the main program:: cannot access local variable 'voltage_filt' where it is not associated with a value
+2026-01-07 17:19:34,252 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 48, in alpss_main
+    cf_out = carrier_filter(sdf_out, cen, **inputs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\carrier_filter.py", line 101, in carrier_filter
+    voltage_filt = voltage_filt - sin_func(time, *popt)
+                   ^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'voltage_filt' where it is not associated with a value
+
+2026-01-07 17:37:12,328 - ERROR - Error in the execution of the main program:: operands could not be broadcast together with shapes (1302,) (1,8) 
+2026-01-07 17:37:12,334 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 48, in alpss_main
+    cf_out = carrier_filter(sdf_out, cen, **inputs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\carrier_filter.py", line 27, in carrier_filter
+    sig_start_idx = np.argmin(np.abs(time - t_start_corrected))
+                                     ~~~~~^~~~~~~~~~~~~~~~~~~
+ValueError: operands could not be broadcast together with shapes (1302,) (1,8) 
+
+2026-01-07 18:29:21,370 - ERROR - Could not locate the peak and/or pullback velocity
+2026-01-07 18:29:21,482 - ERROR - Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_analysis.py", line 39, in spall_analysis
+    max_ten_idx = extrema_min[
+                  ^^^^^^^^^^^^
+IndexError: index 3 is out of bounds for axis 0 with size 3
+
+2026-01-07 18:29:21,576 - ERROR - Could not locate the recompression velocity
+2026-01-07 18:29:21,578 - ERROR - Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_analysis.py", line 89, in spall_analysis
+    rc_idx = extrema_max[
+             ^^^^^^^^^^^^
+IndexError: index 3 is out of bounds for axis 0 with size 2
+
+2026-01-07 18:30:08,103 - ERROR - Could not locate the peak and/or pullback velocity
+2026-01-07 18:30:08,105 - ERROR - Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_analysis.py", line 39, in spall_analysis
+    max_ten_idx = extrema_min[
+                  ^^^^^^^^^^^^
+IndexError: index 2 is out of bounds for axis 0 with size 2
+
+2026-01-07 18:30:08,183 - ERROR - Could not locate the recompression velocity
+2026-01-07 18:30:08,185 - ERROR - Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_analysis.py", line 89, in spall_analysis
+    rc_idx = extrema_max[
+             ^^^^^^^^^^^^
+IndexError: index 6 is out of bounds for axis 0 with size 6
+
+2026-01-07 18:32:31,470 - ERROR - Error in the execution of the main program:: operands could not be broadcast together with shapes (127999,) (1,1274) 
+2026-01-07 18:32:31,474 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 48, in alpss_main
+    cf_out = carrier_filter(sdf_out, cen, **inputs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\carrier_filter.py", line 27, in carrier_filter
+    sig_start_idx = np.argmin(np.abs(time - t_start_corrected))
+                                     ~~~~~^~~~~~~~~~~~~~~~~~~
+ValueError: operands could not be broadcast together with shapes (127999,) (1,1274) 
+
