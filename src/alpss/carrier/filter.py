@@ -110,12 +110,11 @@ def carrier_filter(sdf_out, cen, **inputs):
         sin_fit = 'none'
         display_freq = 'none'
         display_vals = 'none'
-<<<<<<< HEAD:src/alpss/carrier/filter.py
+        display_vals_filtered = 'none'
+
     else:
         raise ValueError(f'Invalid carrier filter type: {inputs["carrier_filter_type"]}')
-=======
         display_vals_filtered = 'none'
->>>>>>> 40208c7 (bug fix):src/alpss/carrier_filter.py
 
     # perform a stft on the filtered voltage data. Only the real part as to not get a two sided spectrogram
     f_filt, t_filt, Zxx_filt = stft(np.real(voltage_filt), fs, **inputs)
