@@ -7006,3 +7006,1106 @@ IndexError: index 6 is out of bounds for axis 0 with size 6
                                      ~~~~~^~~~~~~~~~~~~~~~~~~
 ValueError: operands could not be broadcast together with shapes (127999,) (1,1274) 
 
+2026-01-08 15:45:17,178 - ERROR - Error in the execution of the main program:: x and y must have same first dimension, but have shapes (7547,) and (755222,)
+2026-01-08 15:45:17,211 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 66, in alpss_main
+    fig = plot_results(
+          ^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\plotting.py", line 151, in plot_results
+    ax4.plot(sdf_out["t"]*1e9,phas)
+  File "C:\Users\lucas\AppData\Roaming\Python\Python312\site-packages\matplotlib\axes\_axes.py", line 1777, in plot
+    lines = [*self._get_lines(self, *args, data=data, **kwargs)]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lucas\AppData\Roaming\Python\Python312\site-packages\matplotlib\axes\_base.py", line 297, in __call__
+    yield from self._plot_args(
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\lucas\AppData\Roaming\Python\Python312\site-packages\matplotlib\axes\_base.py", line 494, in _plot_args
+    raise ValueError(f"x and y must have same first dimension, but "
+ValueError: x and y must have same first dimension, but have shapes (7547,) and (755222,)
+
+2026-01-08 16:10:59,059 - ERROR - Error in the execution of the main program:: name 'fs' is not defined
+2026-01-08 16:10:59,063 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 66, in alpss_main
+    fig = plot_results(
+          ^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\plotting.py", line 163, in plot_results
+    freq = fftshift(np.arange((-numpts / 2), (numpts / 2)) * fs / numpts)
+                                                             ^^
+NameError: name 'fs' is not defined
+
+2026-01-08 16:12:01,439 - ERROR - Error in the execution of the main program:: cannot access local variable 'voltage_filt' where it is not associated with a value
+2026-01-08 16:12:01,442 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 66, in alpss_main
+    fig = plot_results(
+          ^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\plotting.py", line 166, in plot_results
+    voltage_filt = ifft(fft(voltage_filt) * filt)
+                            ^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'voltage_filt' where it is not associated with a value
+
+2026-01-08 16:18:44,978 - ERROR - Error in the execution of the main program:: cannot access local variable 'sdf_out' where it is not associated with a value
+2026-01-08 16:18:44,982 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 169, in spall_doi_finder
+    fs = sdf_out["fs"]
+         ^^^^^^^
+UnboundLocalError: cannot access local variable 'sdf_out' where it is not associated with a value
+
+2026-01-08 16:20:55,051 - ERROR - Error in the execution of the main program:: boolean index did not match indexed array along axis 0; size of axis is 755222 but size of corresponding boolean axis is 7547
+2026-01-08 16:20:55,054 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 181, in spall_doi_finder
+    mu0 = np.mean(signal[mask4])
+                  ~~~~~~^^^^^^^
+IndexError: boolean index did not match indexed array along axis 0; size of axis is 755222 but size of corresponding boolean axis is 7547
+
+2026-01-08 16:25:46,285 - ERROR - Error in the execution of the main program:: Input variable "smoothing_window" must be an odd integer and less than half the length of the velocity signal
+2026-01-08 16:25:46,320 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 51, in alpss_main
+    vc_out = velocity_calculation(sdf_out, cen, cf_out, **inputs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\velocity_calculation.py", line 49, in velocity_calculation
+    velocity_f_smooth = smoothing(
+                        ^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\smoothing.py", line 16, in smoothing
+    raise Exception('Input variable "smoothing_window" must be an odd integer and less than half the length of '
+Exception: Input variable "smoothing_window" must be an odd integer and less than half the length of the velocity signal
+
+2026-01-08 16:25:55,326 - ERROR - Error in the execution of the main program:: Input variable "smoothing_window" must be an odd integer and less than half the length of the velocity signal
+2026-01-08 16:25:55,328 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 51, in alpss_main
+    vc_out = velocity_calculation(sdf_out, cen, cf_out, **inputs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\velocity_calculation.py", line 49, in velocity_calculation
+    velocity_f_smooth = smoothing(
+                        ^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\smoothing.py", line 16, in smoothing
+    raise Exception('Input variable "smoothing_window" must be an odd integer and less than half the length of '
+Exception: Input variable "smoothing_window" must be an odd integer and less than half the length of the velocity signal
+
+2026-01-08 16:28:15,705 - ERROR - Error in the execution of the main program:: 'signal'
+2026-01-08 16:28:15,707 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 66, in alpss_main
+    fig = plot_results(
+          ^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\plotting.py", line 172, in plot_results
+    ax4.plot(sdf_out["time"]*1e9,sdf_out["signal"])
+                                 ~~~~~~~^^^^^^^^^^
+KeyError: 'signal'
+
+2026-01-08 16:30:51,422 - ERROR - Error in the execution of the main program:: Input variable "smoothing_window" must be an odd integer and less than half the length of the velocity signal
+2026-01-08 16:30:51,434 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 51, in alpss_main
+    vc_out = velocity_calculation(sdf_out, cen, cf_out, **inputs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\velocity_calculation.py", line 49, in velocity_calculation
+    velocity_f_smooth = smoothing(
+                        ^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\smoothing.py", line 16, in smoothing
+    raise Exception('Input variable "smoothing_window" must be an odd integer and less than half the length of '
+Exception: Input variable "smoothing_window" must be an odd integer and less than half the length of the velocity signal
+
+2026-01-08 16:31:04,671 - ERROR - Error in the execution of the main program:: Input variable "smoothing_window" must be an odd integer and less than half the length of the velocity signal
+2026-01-08 16:31:04,672 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 51, in alpss_main
+    vc_out = velocity_calculation(sdf_out, cen, cf_out, **inputs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\velocity_calculation.py", line 49, in velocity_calculation
+    velocity_f_smooth = smoothing(
+                        ^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\smoothing.py", line 16, in smoothing
+    raise Exception('Input variable "smoothing_window" must be an odd integer and less than half the length of '
+Exception: Input variable "smoothing_window" must be an odd integer and less than half the length of the velocity signal
+
+2026-01-08 16:31:20,871 - ERROR - Error in the execution of the main program:: Input variable "smoothing_window" must be an odd integer and less than half the length of the velocity signal
+2026-01-08 16:31:20,874 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 51, in alpss_main
+    vc_out = velocity_calculation(sdf_out, cen, cf_out, **inputs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\velocity_calculation.py", line 49, in velocity_calculation
+    velocity_f_smooth = smoothing(
+                        ^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\smoothing.py", line 16, in smoothing
+    raise Exception('Input variable "smoothing_window" must be an odd integer and less than half the length of '
+Exception: Input variable "smoothing_window" must be an odd integer and less than half the length of the velocity signal
+
+2026-01-08 16:34:40,489 - ERROR - Could not locate the peak and/or pullback velocity
+2026-01-08 16:34:40,493 - ERROR - Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_analysis.py", line 39, in spall_analysis
+    max_ten_idx = extrema_min[
+                  ^^^^^^^^^^^^
+IndexError: index 6 is out of bounds for axis 0 with size 6
+
+2026-01-08 16:34:40,508 - ERROR - Could not locate the recompression velocity
+2026-01-08 16:34:40,510 - ERROR - Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_analysis.py", line 89, in spall_analysis
+    rc_idx = extrema_max[
+             ^^^^^^^^^^^^
+IndexError: index 6 is out of bounds for axis 0 with size 5
+
+2026-01-08 16:37:55,739 - ERROR - Could not locate the peak and/or pullback velocity
+2026-01-08 16:37:55,742 - ERROR - Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_analysis.py", line 39, in spall_analysis
+    max_ten_idx = extrema_min[
+                  ^^^^^^^^^^^^
+IndexError: index 15 is out of bounds for axis 0 with size 15
+
+2026-01-08 16:37:55,782 - ERROR - Could not locate the recompression velocity
+2026-01-08 16:37:55,784 - ERROR - Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_analysis.py", line 89, in spall_analysis
+    rc_idx = extrema_max[
+             ^^^^^^^^^^^^
+IndexError: index 15 is out of bounds for axis 0 with size 14
+
+2026-01-08 16:38:30,265 - ERROR - Could not locate the recompression velocity
+2026-01-08 16:38:30,267 - ERROR - Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_analysis.py", line 89, in spall_analysis
+    rc_idx = extrema_max[
+             ^^^^^^^^^^^^
+IndexError: index 7 is out of bounds for axis 0 with size 7
+
+2026-01-08 16:39:27,791 - ERROR - Could not locate the peak and/or pullback velocity
+2026-01-08 16:39:27,793 - ERROR - Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_analysis.py", line 39, in spall_analysis
+    max_ten_idx = extrema_min[
+                  ^^^^^^^^^^^^
+IndexError: index 15 is out of bounds for axis 0 with size 15
+
+2026-01-08 16:39:27,834 - ERROR - Could not locate the recompression velocity
+2026-01-08 16:39:27,836 - ERROR - Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_analysis.py", line 89, in spall_analysis
+    rc_idx = extrema_max[
+             ^^^^^^^^^^^^
+IndexError: index 15 is out of bounds for axis 0 with size 14
+
+2026-01-08 16:40:05,207 - ERROR - Could not locate the recompression velocity
+2026-01-08 16:40:05,209 - ERROR - Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_analysis.py", line 89, in spall_analysis
+    rc_idx = extrema_max[
+             ^^^^^^^^^^^^
+IndexError: index 15 is out of bounds for axis 0 with size 15
+
+2026-01-08 16:41:04,732 - ERROR - Could not locate the recompression velocity
+2026-01-08 16:41:04,735 - ERROR - Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_analysis.py", line 89, in spall_analysis
+    rc_idx = extrema_max[
+             ^^^^^^^^^^^^
+IndexError: index 15 is out of bounds for axis 0 with size 15
+
+2026-01-08 16:41:47,323 - ERROR - Could not locate the peak and/or pullback velocity
+2026-01-08 16:41:47,326 - ERROR - Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_analysis.py", line 39, in spall_analysis
+    max_ten_idx = extrema_min[
+                  ^^^^^^^^^^^^
+IndexError: index 6 is out of bounds for axis 0 with size 6
+
+2026-01-08 16:41:47,341 - ERROR - Could not locate the recompression velocity
+2026-01-08 16:41:47,343 - ERROR - Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_analysis.py", line 89, in spall_analysis
+    rc_idx = extrema_max[
+             ^^^^^^^^^^^^
+IndexError: index 6 is out of bounds for axis 0 with size 5
+
+2026-01-08 16:42:23,411 - ERROR - Error in the execution of the main program:: operands could not be broadcast together with shapes (1195,) (1,120000) 
+2026-01-08 16:42:23,414 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 202, in spall_doi_finder
+    t_doi_start_spec_idx = np.argmin(np.abs(t - t_doi_start))
+                                            ~~^~~~~~~~~~~~~
+ValueError: operands could not be broadcast together with shapes (1195,) (1,120000) 
+
+2026-01-08 16:44:52,536 - ERROR - Could not locate the recompression velocity
+2026-01-08 16:44:52,537 - ERROR - Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_analysis.py", line 89, in spall_analysis
+    rc_idx = extrema_max[
+             ^^^^^^^^^^^^
+IndexError: index 15 is out of bounds for axis 0 with size 15
+
+2026-01-08 16:47:45,453 - ERROR - Error in the execution of the main program:: operands could not be broadcast together with shapes (1195,) (1,120000) 
+2026-01-08 16:47:45,457 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 202, in spall_doi_finder
+    t_doi_start_spec_idx = np.argmin(np.abs(t - t_doi_start))
+                                            ~~^~~~~~~~~~~~~
+ValueError: operands could not be broadcast together with shapes (1195,) (1,120000) 
+
+2026-01-08 16:48:08,091 - ERROR - Error in the execution of the main program:: Input variable "smoothing_window" must be an odd integer and less than half the length of the velocity signal
+2026-01-08 16:48:08,094 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 51, in alpss_main
+    vc_out = velocity_calculation(sdf_out, cen, cf_out, **inputs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\velocity_calculation.py", line 49, in velocity_calculation
+    velocity_f_smooth = smoothing(
+                        ^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\smoothing.py", line 16, in smoothing
+    raise Exception('Input variable "smoothing_window" must be an odd integer and less than half the length of '
+Exception: Input variable "smoothing_window" must be an odd integer and less than half the length of the velocity signal
+
+2026-01-08 16:50:50,850 - ERROR - Error in the execution of the main program:: savgol_filter() missing 1 required positional argument: 'polyorder'
+2026-01-08 16:50:50,853 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 178, in spall_doi_finder
+    signal = np.gradient(savgol_filter(phas,601))
+                         ^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: savgol_filter() missing 1 required positional argument: 'polyorder'
+
+2026-01-08 16:52:27,237 - ERROR - Error in the execution of the main program:: Input variable "smoothing_window" must be an odd integer and less than half the length of the velocity signal
+2026-01-08 16:52:27,243 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 51, in alpss_main
+    vc_out = velocity_calculation(sdf_out, cen, cf_out, **inputs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\velocity_calculation.py", line 49, in velocity_calculation
+    velocity_f_smooth = smoothing(
+                        ^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\smoothing.py", line 16, in smoothing
+    raise Exception('Input variable "smoothing_window" must be an odd integer and less than half the length of '
+Exception: Input variable "smoothing_window" must be an odd integer and less than half the length of the velocity signal
+
+2026-01-08 17:03:46,077 - ERROR - Error in the execution of the main program:: Axes.vlines() missing 2 required positional arguments: 'ymin' and 'ymax'
+2026-01-08 17:03:46,125 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 66, in alpss_main
+    fig = plot_results(
+          ^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\plotting.py", line 173, in plot_results
+    ax4.vlines([sdf_out["t_start_detected"]*1e9],colors='r')
+  File "C:\Users\lucas\AppData\Roaming\Python\Python312\site-packages\matplotlib\_api\deprecation.py", line 453, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lucas\AppData\Roaming\Python\Python312\site-packages\matplotlib\__init__.py", line 1521, in inner
+    return func(
+           ^^^^^
+TypeError: Axes.vlines() missing 2 required positional arguments: 'ymin' and 'ymax'
+
+2026-01-08 17:04:49,543 - ERROR - Error in the execution of the main program:: can't multiply sequence by non-int of type 'float'
+2026-01-08 17:04:49,589 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 36, in spall_doi_finder
+    f, t, Zxx = stft(voltage, fs, **inputs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\utils.py", line 18, in stft
+    Sx_full = SFT.stft(voltage, padding="zeros")
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\scipy\signal\_short_time_fft.py", line 797, in stft
+    return self.stft_detrend(x, None, p0, p1, k_offset=k_offset,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\scipy\signal\_short_time_fft.py", line 849, in stft_detrend
+    S[..., :, p_] = self._fft_func(x_ * self.win.conj())
+                                   ~~~^~~~~~~~~~~~~~~~~
+TypeError: can't multiply sequence by non-int of type 'float'
+
+2026-01-08 17:04:50,234 - ERROR - Error in the fallback visualization of the voltage signal: can't multiply sequence by non-int of type 'float'
+2026-01-08 17:04:50,236 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 36, in spall_doi_finder
+    f, t, Zxx = stft(voltage, fs, **inputs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\utils.py", line 18, in stft
+    Sx_full = SFT.stft(voltage, padding="zeros")
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\scipy\signal\_short_time_fft.py", line 797, in stft
+    return self.stft_detrend(x, None, p0, p1, k_offset=k_offset,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\scipy\signal\_short_time_fft.py", line 849, in stft_detrend
+    S[..., :, p_] = self._fft_func(x_ * self.win.conj())
+                                   ~~~^~~~~~~~~~~~~~~~~
+TypeError: can't multiply sequence by non-int of type 'float'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 114, in alpss_main
+    plot_voltage(**inputs)
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\plotting.py", line 513, in plot_voltage
+    f, t, Zxx = stft(voltage, fs, **inputs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\utils.py", line 18, in stft
+    Sx_full = SFT.stft(voltage, padding="zeros")
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\scipy\signal\_short_time_fft.py", line 797, in stft
+    return self.stft_detrend(x, None, p0, p1, k_offset=k_offset,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\scipy\signal\_short_time_fft.py", line 849, in stft_detrend
+    S[..., :, p_] = self._fft_func(x_ * self.win.conj())
+                                   ~~~^~~~~~~~~~~~~~~~~
+TypeError: can't multiply sequence by non-int of type 'float'
+
+2026-01-08 17:05:05,576 - ERROR - Error in the execution of the main program:: can't multiply sequence by non-int of type 'float'
+2026-01-08 17:05:05,578 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 36, in spall_doi_finder
+    f, t, Zxx = stft(voltage, fs, **inputs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\utils.py", line 18, in stft
+    Sx_full = SFT.stft(voltage, padding="zeros")
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\scipy\signal\_short_time_fft.py", line 797, in stft
+    return self.stft_detrend(x, None, p0, p1, k_offset=k_offset,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\scipy\signal\_short_time_fft.py", line 849, in stft_detrend
+    S[..., :, p_] = self._fft_func(x_ * self.win.conj())
+                                   ~~~^~~~~~~~~~~~~~~~~
+TypeError: can't multiply sequence by non-int of type 'float'
+
+2026-01-08 17:05:06,171 - ERROR - Error in the fallback visualization of the voltage signal: can't multiply sequence by non-int of type 'float'
+2026-01-08 17:05:06,175 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 36, in spall_doi_finder
+    f, t, Zxx = stft(voltage, fs, **inputs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\utils.py", line 18, in stft
+    Sx_full = SFT.stft(voltage, padding="zeros")
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\scipy\signal\_short_time_fft.py", line 797, in stft
+    return self.stft_detrend(x, None, p0, p1, k_offset=k_offset,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\scipy\signal\_short_time_fft.py", line 849, in stft_detrend
+    S[..., :, p_] = self._fft_func(x_ * self.win.conj())
+                                   ~~~^~~~~~~~~~~~~~~~~
+TypeError: can't multiply sequence by non-int of type 'float'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 114, in alpss_main
+    plot_voltage(**inputs)
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\plotting.py", line 513, in plot_voltage
+    f, t, Zxx = stft(voltage, fs, **inputs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\utils.py", line 18, in stft
+    Sx_full = SFT.stft(voltage, padding="zeros")
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\scipy\signal\_short_time_fft.py", line 797, in stft
+    return self.stft_detrend(x, None, p0, p1, k_offset=k_offset,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\scipy\signal\_short_time_fft.py", line 849, in stft_detrend
+    S[..., :, p_] = self._fft_func(x_ * self.win.conj())
+                                   ~~~^~~~~~~~~~~~~~~~~
+TypeError: can't multiply sequence by non-int of type 'float'
+
+2026-01-08 17:05:48,192 - ERROR - Error in the execution of the main program:: zero-size array to reduction operation minimum which has no identity
+2026-01-08 17:05:48,195 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 57, in spall_doi_finder
+    smin = np.min(power_cut)
+           ^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\numpy\_core\fromnumeric.py", line 3302, in min
+    return _wrapreduction(a, np.minimum, 'min', axis, None, out,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\numpy\_core\fromnumeric.py", line 86, in _wrapreduction
+    return ufunc.reduce(obj, axis, dtype, out, **passkwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: zero-size array to reduction operation minimum which has no identity
+
+2026-01-08 17:06:32,100 - ERROR - Error in the execution of the main program:: zero-size array to reduction operation minimum which has no identity
+2026-01-08 17:06:32,102 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 57, in spall_doi_finder
+    smin = np.min(power_cut)
+           ^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\numpy\_core\fromnumeric.py", line 3302, in min
+    return _wrapreduction(a, np.minimum, 'min', axis, None, out,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\numpy\_core\fromnumeric.py", line 86, in _wrapreduction
+    return ufunc.reduce(obj, axis, dtype, out, **passkwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: zero-size array to reduction operation minimum which has no identity
+
+2026-01-08 17:06:42,900 - ERROR - Error in the execution of the main program:: zero-size array to reduction operation minimum which has no identity
+2026-01-08 17:06:42,901 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 57, in spall_doi_finder
+    smin = np.min(power_cut)
+           ^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\numpy\_core\fromnumeric.py", line 3302, in min
+    return _wrapreduction(a, np.minimum, 'min', axis, None, out,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\numpy\_core\fromnumeric.py", line 86, in _wrapreduction
+    return ufunc.reduce(obj, axis, dtype, out, **passkwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: zero-size array to reduction operation minimum which has no identity
+
+2026-01-08 17:07:25,198 - ERROR - Error in the execution of the main program:: zero-size array to reduction operation minimum which has no identity
+2026-01-08 17:07:25,200 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 57, in spall_doi_finder
+    smin = np.min(power_cut)
+           ^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\numpy\_core\fromnumeric.py", line 3302, in min
+    return _wrapreduction(a, np.minimum, 'min', axis, None, out,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\numpy\_core\fromnumeric.py", line 86, in _wrapreduction
+    return ufunc.reduce(obj, axis, dtype, out, **passkwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: zero-size array to reduction operation minimum which has no identity
+
+2026-01-08 17:11:32,049 - ERROR - Could not locate the recompression velocity
+2026-01-08 17:11:32,052 - ERROR - Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_analysis.py", line 89, in spall_analysis
+    rc_idx = extrema_max[
+             ^^^^^^^^^^^^
+IndexError: index 4 is out of bounds for axis 0 with size 4
+
+2026-01-08 17:15:02,243 - ERROR - Error in the execution of the main program:: Input variable "smoothing_window" must be an odd integer and less than half the length of the velocity signal
+2026-01-08 17:15:02,248 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 51, in alpss_main
+    vc_out = velocity_calculation(sdf_out, cen, cf_out, **inputs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\velocity_calculation.py", line 49, in velocity_calculation
+    velocity_f_smooth = smoothing(
+                        ^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\smoothing.py", line 16, in smoothing
+    raise Exception('Input variable "smoothing_window" must be an odd integer and less than half the length of '
+Exception: Input variable "smoothing_window" must be an odd integer and less than half the length of the velocity signal
+
+2026-01-08 17:17:00,725 - ERROR - Could not locate the recompression velocity
+2026-01-08 17:17:00,729 - ERROR - Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_analysis.py", line 89, in spall_analysis
+    rc_idx = extrema_max[
+             ^^^^^^^^^^^^
+IndexError: index 4 is out of bounds for axis 0 with size 4
+
+2026-01-08 17:25:28,571 - ERROR - Could not locate the peak and/or pullback velocity
+2026-01-08 17:25:28,575 - ERROR - Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_analysis.py", line 39, in spall_analysis
+    max_ten_idx = extrema_min[
+                  ^^^^^^^^^^^^
+IndexError: index 8 is out of bounds for axis 0 with size 8
+
+2026-01-08 17:25:28,596 - ERROR - Could not locate the recompression velocity
+2026-01-08 17:25:28,597 - ERROR - Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_analysis.py", line 89, in spall_analysis
+    rc_idx = extrema_max[
+             ^^^^^^^^^^^^
+IndexError: index 8 is out of bounds for axis 0 with size 7
+
+2026-01-08 17:30:08,371 - ERROR - Could not locate the recompression velocity
+2026-01-08 17:30:08,375 - ERROR - Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_analysis.py", line 89, in spall_analysis
+    rc_idx = extrema_max[
+             ^^^^^^^^^^^^
+IndexError: index 5 is out of bounds for axis 0 with size 5
+
+2026-01-08 17:32:57,613 - ERROR - Could not locate the recompression velocity
+2026-01-08 17:32:57,616 - ERROR - Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_analysis.py", line 89, in spall_analysis
+    rc_idx = extrema_max[
+             ^^^^^^^^^^^^
+IndexError: index 3 is out of bounds for axis 0 with size 3
+
+2026-01-08 17:43:46,362 - ERROR - Error in the execution of the main program:: operands could not be broadcast together with shapes (12795,) (1,1280000) 
+2026-01-08 17:43:46,367 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 203, in spall_doi_finder
+    t_doi_start_spec_idx = np.argmin(np.abs(t - t_doi_start))
+                                            ~~^~~~~~~~~~~~~
+ValueError: operands could not be broadcast together with shapes (12795,) (1,1280000) 
+
+2026-01-08 17:45:01,987 - ERROR - Error in the execution of the main program:: operands could not be broadcast together with shapes (7867,) (1,787204) 
+2026-01-08 17:45:01,989 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 203, in spall_doi_finder
+    t_doi_start_spec_idx = np.argmin(np.abs(t - t_doi_start))
+                                            ~~^~~~~~~~~~~~~
+ValueError: operands could not be broadcast together with shapes (7867,) (1,787204) 
+
+2026-01-08 17:45:35,516 - ERROR - Error in the execution of the main program:: cannot access local variable 'signal' where it is not associated with a value
+2026-01-08 17:45:35,518 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 248, in spall_doi_finder
+    "cusum_signal": signal,
+                    ^^^^^^
+UnboundLocalError: cannot access local variable 'signal' where it is not associated with a value
+
+2026-01-08 17:45:52,630 - ERROR - Error in the execution of the main program:: cannot access local variable 'signal' where it is not associated with a value
+2026-01-08 17:45:52,633 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 248, in spall_doi_finder
+    "cusum_signal": signal,
+                    ^^^^^^
+UnboundLocalError: cannot access local variable 'signal' where it is not associated with a value
+
+2026-01-08 17:48:44,178 - ERROR - Could not locate the peak and/or pullback velocity
+2026-01-08 17:48:44,190 - ERROR - Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_analysis.py", line 39, in spall_analysis
+    max_ten_idx = extrema_min[
+                  ^^^^^^^^^^^^
+IndexError: index 3 is out of bounds for axis 0 with size 3
+
+2026-01-08 17:48:44,212 - ERROR - Could not locate the recompression velocity
+2026-01-08 17:48:44,213 - ERROR - Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_analysis.py", line 89, in spall_analysis
+    rc_idx = extrema_max[
+             ^^^^^^^^^^^^
+IndexError: index 4 is out of bounds for axis 0 with size 4
+
+2026-01-12 09:48:07,087 - ERROR - Error in the execution of the main program:: [Errno 13] Permission denied: 'C:\\Users\\lucas\\OneDrive - Johns Hopkins\\Ramesh Lab - Research\\Papers\\Alumina\\McMaster-Carr Processed PDV\\C1--20250604--00007--results.csv'
+2026-01-12 09:48:07,290 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 90, in alpss_main
+    df = save(
+         ^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\saving.py", line 161, in save
+    results_df.to_csv(fname + "--results" + ".csv", index=False)
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\core\generic.py", line 3967, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\formats\format.py", line 1014, in to_csv
+    csv_formatter.save()
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\formats\csvs.py", line 251, in save
+    with get_handle(
+         ^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+PermissionError: [Errno 13] Permission denied: 'C:\\Users\\lucas\\OneDrive - Johns Hopkins\\Ramesh Lab - Research\\Papers\\Alumina\\McMaster-Carr Processed PDV\\C1--20250604--00007--results.csv'
+
+2026-01-12 09:54:00,474 - ERROR - Could not locate the peak and/or pullback velocity
+2026-01-12 09:54:00,529 - ERROR - Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_analysis.py", line 39, in spall_analysis
+    max_ten_idx = extrema_min[
+                  ^^^^^^^^^^^^
+IndexError: index 3 is out of bounds for axis 0 with size 3
+
+2026-01-12 09:54:00,556 - ERROR - Could not locate the recompression velocity
+2026-01-12 09:54:00,557 - ERROR - Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_analysis.py", line 89, in spall_analysis
+    rc_idx = extrema_max[
+             ^^^^^^^^^^^^
+IndexError: index 6 is out of bounds for axis 0 with size 6
+
+2026-01-12 09:54:28,613 - ERROR - Could not locate the recompression velocity
+2026-01-12 09:54:28,616 - ERROR - Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_analysis.py", line 89, in spall_analysis
+    rc_idx = extrema_max[
+             ^^^^^^^^^^^^
+IndexError: index 5 is out of bounds for axis 0 with size 5
+
+2026-01-12 09:55:26,032 - ERROR - Could not locate the peak and/or pullback velocity
+2026-01-12 09:55:26,035 - ERROR - Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_analysis.py", line 39, in spall_analysis
+    max_ten_idx = extrema_min[
+                  ^^^^^^^^^^^^
+IndexError: index 3 is out of bounds for axis 0 with size 3
+
+2026-01-12 09:55:26,058 - ERROR - Could not locate the recompression velocity
+2026-01-12 09:55:26,059 - ERROR - Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_analysis.py", line 89, in spall_analysis
+    rc_idx = extrema_max[
+             ^^^^^^^^^^^^
+IndexError: index 6 is out of bounds for axis 0 with size 5
+
+2026-01-12 10:07:55,635 - ERROR - Could not locate the peak and/or pullback velocity
+2026-01-12 10:07:55,647 - ERROR - Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_analysis.py", line 39, in spall_analysis
+    max_ten_idx = extrema_min[
+                  ^^^^^^^^^^^^
+IndexError: index 3 is out of bounds for axis 0 with size 3
+
+2026-01-12 10:07:55,671 - ERROR - Could not locate the recompression velocity
+2026-01-12 10:07:55,672 - ERROR - Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_analysis.py", line 89, in spall_analysis
+    rc_idx = extrema_max[
+             ^^^^^^^^^^^^
+IndexError: index 6 is out of bounds for axis 0 with size 5
+
+2026-01-12 10:08:45,670 - ERROR - Could not locate the recompression velocity
+2026-01-12 10:08:45,673 - ERROR - Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_analysis.py", line 89, in spall_analysis
+    rc_idx = extrema_max[
+             ^^^^^^^^^^^^
+IndexError: index 5 is out of bounds for axis 0 with size 5
+
+2026-01-12 10:12:21,887 - ERROR - Could not locate the recompression velocity
+2026-01-12 10:12:21,891 - ERROR - Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_analysis.py", line 89, in spall_analysis
+    rc_idx = extrema_max[
+             ^^^^^^^^^^^^
+IndexError: index 5 is out of bounds for axis 0 with size 5
+
+2026-01-12 10:12:39,073 - ERROR - Error in the execution of the main program:: [Errno 13] Permission denied: 'C:\\Users\\lucas\\OneDrive - Johns Hopkins\\Ramesh Lab - Research\\Papers\\Alumina\\McMaster-Carr Processed PDV\\C1--20250604--00008--results.csv'
+2026-01-12 10:12:39,084 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 90, in alpss_main
+    df = save(
+         ^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\saving.py", line 161, in save
+    results_df.to_csv(fname + "--results" + ".csv", index=False, header=False)
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\core\generic.py", line 3967, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\formats\format.py", line 1014, in to_csv
+    csv_formatter.save()
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\formats\csvs.py", line 251, in save
+    with get_handle(
+         ^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+PermissionError: [Errno 13] Permission denied: 'C:\\Users\\lucas\\OneDrive - Johns Hopkins\\Ramesh Lab - Research\\Papers\\Alumina\\McMaster-Carr Processed PDV\\C1--20250604--00008--results.csv'
+
+2026-01-12 10:13:21,156 - ERROR - Could not locate the recompression velocity
+2026-01-12 10:13:21,158 - ERROR - Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_analysis.py", line 89, in spall_analysis
+    rc_idx = extrema_max[
+             ^^^^^^^^^^^^
+IndexError: index 5 is out of bounds for axis 0 with size 5
+
+2026-01-12 10:18:55,043 - ERROR - Could not locate the recompression velocity
+2026-01-12 10:18:55,047 - ERROR - Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_analysis.py", line 89, in spall_analysis
+    rc_idx = extrema_max[
+             ^^^^^^^^^^^^
+IndexError: index 5 is out of bounds for axis 0 with size 5
+
+2026-01-12 10:19:15,276 - ERROR - Error in the execution of the main program:: [Errno 13] Permission denied: 'C:\\Users\\lucas\\OneDrive - Johns Hopkins\\Ramesh Lab - Research\\Papers\\Alumina\\McMaster-Carr Processed PDV\\C1--20250604--00008--results.csv'
+2026-01-12 10:19:15,292 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 90, in alpss_main
+    df = save(
+         ^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\saving.py", line 161, in save
+    results_df.to_csv(fname + "--results" + ".csv", index=False, header=False)
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\core\generic.py", line 3967, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\formats\format.py", line 1014, in to_csv
+    csv_formatter.save()
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\formats\csvs.py", line 251, in save
+    with get_handle(
+         ^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+PermissionError: [Errno 13] Permission denied: 'C:\\Users\\lucas\\OneDrive - Johns Hopkins\\Ramesh Lab - Research\\Papers\\Alumina\\McMaster-Carr Processed PDV\\C1--20250604--00008--results.csv'
+
+2026-01-12 10:20:17,886 - ERROR - Could not locate the recompression velocity
+2026-01-12 10:20:17,902 - ERROR - Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_analysis.py", line 89, in spall_analysis
+    rc_idx = extrema_max[
+             ^^^^^^^^^^^^
+IndexError: index 5 is out of bounds for axis 0 with size 5
+
+2026-01-12 10:24:58,921 - ERROR - Could not locate the peak and/or pullback velocity
+2026-01-12 10:24:58,924 - ERROR - Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_analysis.py", line 39, in spall_analysis
+    max_ten_idx = extrema_min[
+                  ^^^^^^^^^^^^
+IndexError: index 4 is out of bounds for axis 0 with size 4
+
+2026-01-12 10:24:58,949 - ERROR - Could not locate the recompression velocity
+2026-01-12 10:24:58,951 - ERROR - Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_analysis.py", line 89, in spall_analysis
+    rc_idx = extrema_max[
+             ^^^^^^^^^^^^
+IndexError: index 5 is out of bounds for axis 0 with size 5
+
+2026-01-12 10:25:32,445 - ERROR - Could not locate the recompression velocity
+2026-01-12 10:25:32,448 - ERROR - Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_analysis.py", line 89, in spall_analysis
+    rc_idx = extrema_max[
+             ^^^^^^^^^^^^
+IndexError: index 4 is out of bounds for axis 0 with size 4
+
+2026-01-12 10:26:13,421 - ERROR - Could not locate the recompression velocity
+2026-01-12 10:26:13,423 - ERROR - Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_analysis.py", line 89, in spall_analysis
+    rc_idx = extrema_max[
+             ^^^^^^^^^^^^
+IndexError: index 4 is out of bounds for axis 0 with size 4
+
+2026-01-12 10:46:18,294 - ERROR - Error in the execution of the main program:: operands could not be broadcast together with shapes (12667,) (1,1267200) 
+2026-01-12 10:46:18,381 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 205, in spall_doi_finder
+    t_doi_start_spec_idx = np.argmin(np.abs(t - t_doi_start))
+                                            ~~^~~~~~~~~~~~~
+ValueError: operands could not be broadcast together with shapes (12667,) (1,1267200) 
+
+2026-01-12 10:46:42,522 - ERROR - Error in the execution of the main program:: operands could not be broadcast together with shapes (12667,) (1,1267200) 
+2026-01-12 10:46:42,526 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 205, in spall_doi_finder
+    t_doi_start_spec_idx = np.argmin(np.abs(t - t_doi_start))
+                                            ~~^~~~~~~~~~~~~
+ValueError: operands could not be broadcast together with shapes (12667,) (1,1267200) 
+
+2026-01-12 10:54:28,834 - ERROR - Could not locate the recompression velocity
+2026-01-12 10:54:28,840 - ERROR - Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_analysis.py", line 89, in spall_analysis
+    rc_idx = extrema_max[
+             ^^^^^^^^^^^^
+IndexError: index 4 is out of bounds for axis 0 with size 4
+
+2026-01-12 11:17:15,772 - ERROR - Error in the execution of the main program:: [Errno 2] No such file or directory: 'C:\\Users\\lucas\\OneDrive - Johns Hopkins\\AIMDL_Laser_Shock Undergrads - Data - Data\\PDV_data\\input_data\\C1--20250616--00012.csv'
+2026-01-12 11:17:16,234 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 22, in spall_doi_finder
+    data = pd.read_csv(fname, skiprows=int(rows_to_skip), nrows=int(nrows))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\lucas\\OneDrive - Johns Hopkins\\AIMDL_Laser_Shock Undergrads - Data - Data\\PDV_data\\input_data\\C1--20250616--00012.csv'
+
+2026-01-12 11:17:16,239 - ERROR - Error in the fallback visualization of the voltage signal: [Errno 2] No such file or directory: 'C:\\Users\\lucas\\OneDrive - Johns Hopkins\\AIMDL_Laser_Shock Undergrads - Data - Data\\PDV_data\\input_data\\C1--20250616--00012.csv'
+2026-01-12 11:17:16,244 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 22, in spall_doi_finder
+    data = pd.read_csv(fname, skiprows=int(rows_to_skip), nrows=int(nrows))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\lucas\\OneDrive - Johns Hopkins\\AIMDL_Laser_Shock Undergrads - Data - Data\\PDV_data\\input_data\\C1--20250616--00012.csv'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 114, in alpss_main
+    plot_voltage(**inputs)
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\plotting.py", line 495, in plot_voltage
+    data = pd.read_csv(
+           ^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\lucas\\OneDrive - Johns Hopkins\\AIMDL_Laser_Shock Undergrads - Data - Data\\PDV_data\\input_data\\C1--20250616--00012.csv'
+
+2026-01-12 11:38:19,324 - ERROR - Error in the execution of the main program:: operands could not be broadcast together with shapes (3835,) (1,384000) 
+2026-01-12 11:38:19,330 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 205, in spall_doi_finder
+    t_doi_start_spec_idx = np.argmin(np.abs(t - t_doi_start))
+                                            ~~^~~~~~~~~~~~~
+ValueError: operands could not be broadcast together with shapes (3835,) (1,384000) 
+
+2026-01-12 11:39:30,417 - ERROR - Error in the execution of the main program:: Input variable "smoothing_window" must be an odd integer and less than half the length of the velocity signal
+2026-01-12 11:39:30,518 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 51, in alpss_main
+    vc_out = velocity_calculation(sdf_out, cen, cf_out, **inputs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\velocity_calculation.py", line 49, in velocity_calculation
+    velocity_f_smooth = smoothing(
+                        ^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\smoothing.py", line 16, in smoothing
+    raise Exception('Input variable "smoothing_window" must be an odd integer and less than half the length of '
+Exception: Input variable "smoothing_window" must be an odd integer and less than half the length of the velocity signal
+
+2026-01-12 11:42:01,827 - ERROR - Could not locate the recompression velocity
+2026-01-12 11:42:01,829 - ERROR - Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_analysis.py", line 89, in spall_analysis
+    rc_idx = extrema_max[
+             ^^^^^^^^^^^^
+IndexError: index 4 is out of bounds for axis 0 with size 4
+
+2026-01-12 11:44:30,103 - ERROR - Error in the execution of the main program:: operands could not be broadcast together with shapes (3835,) (1,384000) 
+2026-01-12 11:44:30,106 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 205, in spall_doi_finder
+    t_doi_start_spec_idx = np.argmin(np.abs(t - t_doi_start))
+                                            ~~^~~~~~~~~~~~~
+ValueError: operands could not be broadcast together with shapes (3835,) (1,384000) 
+
+2026-01-12 11:45:16,121 - ERROR - Could not locate the recompression velocity
+2026-01-12 11:45:16,124 - ERROR - Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_analysis.py", line 89, in spall_analysis
+    rc_idx = extrema_max[
+             ^^^^^^^^^^^^
+IndexError: index 3 is out of bounds for axis 0 with size 3
+
+2026-01-14 01:01:23,552 - ERROR - Error in the execution of the main program:: operands could not be broadcast together with shapes (1195,) (1,120000) 
+2026-01-14 01:01:23,556 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 205, in spall_doi_finder
+    t_doi_start_spec_idx = np.argmin(np.abs(t - t_doi_start))
+                                            ~~^~~~~~~~~~~~~
+ValueError: operands could not be broadcast together with shapes (1195,) (1,120000) 
+
+2026-01-14 01:02:18,675 - ERROR - Error in the execution of the main program:: operands could not be broadcast together with shapes (6267,) (1,627200) 
+2026-01-14 01:02:18,678 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 205, in spall_doi_finder
+    t_doi_start_spec_idx = np.argmin(np.abs(t - t_doi_start))
+                                            ~~^~~~~~~~~~~~~
+ValueError: operands could not be broadcast together with shapes (6267,) (1,627200) 
+
+2026-01-14 01:02:30,871 - ERROR - Error in the execution of the main program:: operands could not be broadcast together with shapes (6267,) (1,627200) 
+2026-01-14 01:02:30,873 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 205, in spall_doi_finder
+    t_doi_start_spec_idx = np.argmin(np.abs(t - t_doi_start))
+                                            ~~^~~~~~~~~~~~~
+ValueError: operands could not be broadcast together with shapes (6267,) (1,627200) 
+
+2026-01-14 01:03:19,053 - ERROR - Could not locate the peak and/or pullback velocity
+2026-01-14 01:03:19,056 - ERROR - Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_analysis.py", line 39, in spall_analysis
+    max_ten_idx = extrema_min[
+                  ^^^^^^^^^^^^
+IndexError: index 2 is out of bounds for axis 0 with size 2
+
+2026-01-14 01:03:19,081 - ERROR - Could not locate the recompression velocity
+2026-01-14 01:03:19,083 - ERROR - Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_analysis.py", line 89, in spall_analysis
+    rc_idx = extrema_max[
+             ^^^^^^^^^^^^
+IndexError: index 2 is out of bounds for axis 0 with size 2
+
+2026-01-14 01:03:33,295 - ERROR - Could not locate the peak and/or pullback velocity
+2026-01-14 01:03:33,298 - ERROR - Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_analysis.py", line 39, in spall_analysis
+    max_ten_idx = extrema_min[
+                  ^^^^^^^^^^^^
+IndexError: index 2 is out of bounds for axis 0 with size 2
+
+2026-01-14 01:03:33,325 - ERROR - Could not locate the recompression velocity
+2026-01-14 01:03:33,326 - ERROR - Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_analysis.py", line 89, in spall_analysis
+    rc_idx = extrema_max[
+             ^^^^^^^^^^^^
+IndexError: index 2 is out of bounds for axis 0 with size 2
+
+2026-01-14 01:10:51,432 - ERROR - Error in the execution of the main program:: [Errno 2] No such file or directory: 'C:\\Users\\lucas\\OneDrive - Johns Hopkins\\AIMDL_Laser_Shock Undergrads - Data - Data\\PDV_data\\input_data\\C1--20251020--00052_ch2.csv'
+2026-01-14 01:10:51,662 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 22, in spall_doi_finder
+    data = pd.read_csv(fname, skiprows=int(rows_to_skip), nrows=int(nrows))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\lucas\\OneDrive - Johns Hopkins\\AIMDL_Laser_Shock Undergrads - Data - Data\\PDV_data\\input_data\\C1--20251020--00052_ch2.csv'
+
+2026-01-14 01:10:51,664 - ERROR - Error in the fallback visualization of the voltage signal: [Errno 2] No such file or directory: 'C:\\Users\\lucas\\OneDrive - Johns Hopkins\\AIMDL_Laser_Shock Undergrads - Data - Data\\PDV_data\\input_data\\C1--20251020--00052_ch2.csv'
+2026-01-14 01:10:51,667 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 22, in spall_doi_finder
+    data = pd.read_csv(fname, skiprows=int(rows_to_skip), nrows=int(nrows))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\lucas\\OneDrive - Johns Hopkins\\AIMDL_Laser_Shock Undergrads - Data - Data\\PDV_data\\input_data\\C1--20251020--00052_ch2.csv'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 114, in alpss_main
+    plot_voltage(**inputs)
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\plotting.py", line 495, in plot_voltage
+    data = pd.read_csv(
+           ^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\lucas\\OneDrive - Johns Hopkins\\AIMDL_Laser_Shock Undergrads - Data - Data\\PDV_data\\input_data\\C1--20251020--00052_ch2.csv'
+
+2026-01-14 01:10:55,662 - ERROR - Error in the execution of the main program:: [Errno 2] No such file or directory: 'C:\\Users\\lucas\\OneDrive - Johns Hopkins\\AIMDL_Laser_Shock Undergrads - Data - Data\\PDV_data\\input_data\\C1--20251020--00053_ch2.csv'
+2026-01-14 01:10:55,664 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 22, in spall_doi_finder
+    data = pd.read_csv(fname, skiprows=int(rows_to_skip), nrows=int(nrows))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\lucas\\OneDrive - Johns Hopkins\\AIMDL_Laser_Shock Undergrads - Data - Data\\PDV_data\\input_data\\C1--20251020--00053_ch2.csv'
+
+2026-01-14 01:10:55,665 - ERROR - Error in the fallback visualization of the voltage signal: [Errno 2] No such file or directory: 'C:\\Users\\lucas\\OneDrive - Johns Hopkins\\AIMDL_Laser_Shock Undergrads - Data - Data\\PDV_data\\input_data\\C1--20251020--00053_ch2.csv'
+2026-01-14 01:10:55,668 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 22, in spall_doi_finder
+    data = pd.read_csv(fname, skiprows=int(rows_to_skip), nrows=int(nrows))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\lucas\\OneDrive - Johns Hopkins\\AIMDL_Laser_Shock Undergrads - Data - Data\\PDV_data\\input_data\\C1--20251020--00053_ch2.csv'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 114, in alpss_main
+    plot_voltage(**inputs)
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\plotting.py", line 495, in plot_voltage
+    data = pd.read_csv(
+           ^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\lucas\\OneDrive - Johns Hopkins\\AIMDL_Laser_Shock Undergrads - Data - Data\\PDV_data\\input_data\\C1--20251020--00053_ch2.csv'
+

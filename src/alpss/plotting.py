@@ -3,6 +3,9 @@ import numpy as np
 from matplotlib.patches import Rectangle
 import pandas as pd
 import os
+from scipy.fft import fft
+from scipy.fft import ifft
+from scipy.fftpack import fftshift
 
 
 # function to generate the final figure
@@ -147,11 +150,27 @@ def plot_results(
 
     # plotting the thresholded spectrogram on the ROI to show how the signal start time is found
     if inputs["start_time_user"] == "cusum":
-        f = sdf_out["f"]
-        idx = np.argmin(np.abs(f-cen))
-        ax4.plot(sdf_out["t"]*1e9,sdf_out["mag"][idx,:])
-        ax4.vlines([sdf_out["t_start_detected"]*1e9],0,sdf_out["mag"][idx,:].max(),colors='r')
-        ax4.set_ylabel("FFT Magnitude")
+        # f = sdf_out["f"]
+        # idx = np.argmin(np.abs(f-cen))
+        # ax4.plot(sdf_out["t"]*1e9,sdf_out["mag"][idx,:])
+        # ax4.vlines([sdf_out["t_start_detected"]*1e9],0,sdf_out["mag"][idx,:].max(),colors='r')
+        # ax4.set_ylabel("FFT Magnitude")
+
+        # f_min = inputs["freq_min"]
+        # f_max = inputs["freq_max"]
+        # fs = sdf_out["fs"]
+
+        # # isolate signal. filter out all frequencies that are outside the range of interest
+        # numpts = len(sdf_out["time"])
+        # freq = fftshift(np.arange((-numpts / 2), (numpts / 2)) * fs / numpts)
+        # filt = (freq > f_min) * (freq < f_max)
+        
+        # voltage_filt = ifft(fft(sdf_out["voltage"]) * filt)
+        # phas_baseline = 2 * np.pi * cen * sdf_out["time"]
+        # phas = np.unwrap(np.angle(voltage_filt), axis=0)
+        # ax4.plot(sdf_out["time"]*1e9,phas - phas_baseline)
+        ax4.plot(sdf_out["time"]*1e9,sdf_out["cusum_s"])
+        ax4.axvline(x=sdf_out["t_start_detected"]*1e9, color='red', linestyle='--', linewidth=2)
     else:
         ax4.imshow(
             sdf_out["th3"],

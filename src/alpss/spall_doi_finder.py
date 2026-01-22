@@ -4,6 +4,8 @@ import numpy as np
 import cv2 as cv
 from alpss.utils import stft
 from numpy.fft import fft,fftfreq
+from scipy.fft import ifft
+from scipy.fftpack import fftshift
 
 
 # function to find the specific domain of interest in the larger signal
@@ -120,6 +122,8 @@ def spall_doi_finder(**inputs):
         t_doi_end_spec_idx = np.argmin(np.abs(t - t_doi_end))
         mag_doi = mag_cut[:, t_doi_start_spec_idx:t_doi_end_spec_idx]
         power_doi = 10 * np.log10(mag_doi**2)
+        signal = "None"
+        s = "None"
 
     elif inputs["start_time_user"]=="cusum": 
         def cusum(signal, mu0, mu1, sigma, h, k):
@@ -132,7 +136,7 @@ def spall_doi_finder(**inputs):
             """
             # Score for general mean change
             Z = (signal - mu0)/(np.sqrt(sigma))
-            s = -Z - k
+            s = Z - k
             # s = ((mu1 - mu0) / sigma) * (signal - mu0) - ((mu0**2 - mu1**2) / (2 * sigma))
             G = np.zeros_like(s)
 
@@ -161,16 +165,29 @@ def spall_doi_finder(**inputs):
         max_idx = np.argmax(np.abs(carrier_fft_vals*mask3))
         cen = carrier_fft_freqs[max_idx]
         idx = np.argmin(np.abs(f-cen))
-        signal = mag[idx,:]
-        mask4 = t < carrier_band_time
-        mask5 = t > (t.max()-carrier_band_time)
+
+        f_min = inputs["freq_min"]
+        f_max = inputs["freq_max"]
+
+        numpts = len(time)
+        freq = fftshift(np.arange((-numpts / 2), (numpts / 2)) * fs / numpts)
+        filt = (freq > f_min) * (freq < f_max)
+
+        voltage_filt = ifft(fft(voltage) * filt)
+        phas_baseline = 2 * np.pi * cen * time
+        phas = np.unwrap(np.angle(voltage_filt), axis=0)
+        from scipy.signal import savgol_filter
+        signal = np.gradient(savgol_filter(phas,inputs["smoothing_window"],3))
+        # signal = mag[idx,:]
+        mask4 = time < carrier_band_time
+        # mask5 = time > (t.max()-carrier_band_time)
         mu0 = np.mean(signal[mask4])
         mu1 =  0  # Expected post-change signal level
         sigma0 = np.var(signal[mask4])
 
         detection_indices, change_indices, G, s = cusum(signal, mu0, mu1, sigma0, h, k)
 
-        detection_time = t[change_indices]
+        detection_time = time[change_indices]
         print(detection_time)
 
         # these params become nan because they are only needed if the program
@@ -208,6 +225,8 @@ def spall_doi_finder(**inputs):
         t_doi_end_spec_idx = np.argmin(np.abs(t - t_doi_end))
         mag_doi = mag_cut[:, t_doi_start_spec_idx:t_doi_end_spec_idx]
         power_doi = 10 * np.log10(mag_doi**2)
+        signal = "None"
+        s = "None"
 
     # dictionary to return outputs
     sdf_out = {
@@ -230,6 +249,8 @@ def spall_doi_finder(**inputs):
         "t_doi_start": t_doi_start,
         "t_doi_end": t_doi_end,
         "power_doi": power_doi,
+        "cusum_signal": signal,
+        "cusum_s": s,
     }
 
     return sdf_out

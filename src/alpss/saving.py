@@ -150,12 +150,14 @@ def save(
     results_df = pd.DataFrame([results_to_save])
 
     # Optional: Convert units to nanoseconds for certain fields
-    results_df.loc[0, "Velocity at Max Compression"] /= 1e-9
-    results_df.loc[0, "Velocity at Max Tension"] /= 1e-9
-    results_df.loc[0, "Velocity at Recompression"] /= 1e-9
+    results_df.loc[0, "Velocity at Max Compression"]
+    results_df.loc[0, "Velocity at Max Tension"]
+    results_df.loc[0, "Velocity at Recompression"]
     results_df.loc[0, "Spect Time Res"] /= 1e-9
-    results_df.loc[0, "Spect Velocity Res"] /= 1e-9
+    results_df.loc[0, "Spect Velocity Res"]
     results_df.loc[0, "Signal Start Time"] /= 1e-9
 
     display(results_df)
+    results_df.to_csv(fname + "--results" + ".csv", index=False, header=False)
+    
     return results_to_save
