@@ -32,6 +32,13 @@ def velocity_calculation(
     # unwrap the phase angle of the filtered voltage signal
     phas = np.unwrap(np.angle(voltage_filt), axis=0)
 
+    # convert phase to displacement for the heterodyne signal
+    phas_m = phas - 2 * np.pi * cen * time
+    displacement = lam / 4 / np.pi * phas_m
+    
+    # initial condition: enforce the displacement to be zero just before onset of motion (t_doi_start)
+    displacement = displacement - displacement[time_start_idx]
+
     # take the numerical derivative using the certral difference method with a 9-point stencil
     # return the derivative on the domain of interest (dpdt) as well as the padded derivative to be used for smoothing
     dpdt, dpdt_pad = num_derivative(
@@ -42,8 +49,9 @@ def velocity_calculation(
     velocity_pad = (lam / 2) * (dpdt_pad - cen)
     velocity_f = (lam / 2) * (dpdt - cen)
 
-    # crop the time array
+    # crop the time and displacement array
     time_f = time[time_start_idx:time_end_idx]
+    displacement_f = displacement[time_start_idx:time_end_idx]
 
     # smooth the padded velocity signal using a moving average with gaussian weights
     velocity_f_smooth = smoothing(
@@ -60,6 +68,7 @@ def velocity_calculation(
         "time_f": time_f,
         "velocity_f": velocity_f,
         "velocity_f_smooth": velocity_f_smooth,
+        "displacement": displacement_f,
         "phasD2_f": dpdt,
         "voltage_filt": voltage_filt,
         "time_start_idx": time_start_idx,
