@@ -8,8 +8,13 @@ from IPython.display import display
 def save(
     sdf_out, cen, vc_out, sa_out, iua_out, fua_out, start_time, end_time, fig, **inputs
 ):
-    fname = os.path.join(inputs["out_files_dir"], os.path.basename(inputs["filepath"])).replace(".csv","")
+    if inputs["multipoint_probe"] == None:
+        probe = ""
+    else:
+        probe = "_probe"+str(inputs["multipoint_probe"])
 
+    fname = os.path.join(inputs["out_files_dir"], os.path.basename(inputs["filepath"])+probe).replace(".csv","") 
+    print(fname)
     # save the plots
     fig.savefig(
         fname=fname + "--plots.png",
@@ -25,6 +30,16 @@ def save(
     # save the noisy velocity trace
     velocity_data = np.stack((vc_out["time_f"], vc_out["velocity_f"]), axis=1)
     np.savetxt(fname + "--velocity" + ".csv", velocity_data, delimiter=",")
+
+    # save the displacement
+    displacement_data = np.stack(
+        (vc_out["time_f"], vc_out["displacement"]), axis=1
+    )
+    np.savetxt(
+        fname + "--displacement" + ".csv",
+        displacement_data,
+        delimiter=",",
+    )
 
     # save the smoothed velocity trace
     velocity_data_smooth = np.stack(
