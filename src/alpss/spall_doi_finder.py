@@ -160,11 +160,10 @@ def spall_doi_finder(**inputs):
         f_min = inputs["freq_min"]
         f_max = inputs["freq_max"]
 
+        # Apply a bandpass filter to get rid of noise outside of frequency bounds
         numpts = len(time)
         freq = fftshift(np.arange((-numpts / 2), (numpts / 2)) * fs / numpts)
         filt = (freq > f_min) * (freq < f_max)
-
-        # Apply a bandpass filter to get rid of noise outside of frequency bounds
         voltage_filt = ifft(fft(voltage) * filt)
 
         # Unwrap the phase
