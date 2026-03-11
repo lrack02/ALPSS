@@ -512,3 +512,165 @@ ValueError: operands could not be broadcast together with shapes (255999,) (1,25
     raise ValueError(f"x and y must have same first dimension, but "
 ValueError: x and y must have same first dimension, but have shapes (62898,) and (62595,)
 
+2026-03-09 15:56:31,910 - ERROR - Error in the execution of the main program:: zero-size array to reduction operation minimum which has no identity
+2026-03-09 15:56:31,944 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 57, in spall_doi_finder
+    smin = np.min(power_cut)
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\numpy\_core\fromnumeric.py", line 3302, in min
+    return _wrapreduction(a, np.minimum, 'min', axis, None, out,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\numpy\_core\fromnumeric.py", line 86, in _wrapreduction
+    return ufunc.reduce(obj, axis, dtype, out, **passkwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: zero-size array to reduction operation minimum which has no identity
+
+2026-03-09 15:56:35,952 - ERROR - Error in the execution of the main program:: zero-size array to reduction operation minimum which has no identity
+2026-03-09 15:56:35,954 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 57, in spall_doi_finder
+    smin = np.min(power_cut)
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\numpy\_core\fromnumeric.py", line 3302, in min
+    return _wrapreduction(a, np.minimum, 'min', axis, None, out,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\numpy\_core\fromnumeric.py", line 86, in _wrapreduction
+    return ufunc.reduce(obj, axis, dtype, out, **passkwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: zero-size array to reduction operation minimum which has no identity
+
+2026-03-09 15:56:39,381 - ERROR - Error in the execution of the main program:: zero-size array to reduction operation minimum which has no identity
+2026-03-09 15:56:39,382 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 57, in spall_doi_finder
+    smin = np.min(power_cut)
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\numpy\_core\fromnumeric.py", line 3302, in min
+    return _wrapreduction(a, np.minimum, 'min', axis, None, out,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\numpy\_core\fromnumeric.py", line 86, in _wrapreduction
+    return ufunc.reduce(obj, axis, dtype, out, **passkwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: zero-size array to reduction operation minimum which has no identity
+
+2026-03-09 15:56:42,642 - ERROR - Error in the execution of the main program:: zero-size array to reduction operation minimum which has no identity
+2026-03-09 15:56:42,644 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 57, in spall_doi_finder
+    smin = np.min(power_cut)
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\numpy\_core\fromnumeric.py", line 3302, in min
+    return _wrapreduction(a, np.minimum, 'min', axis, None, out,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\numpy\_core\fromnumeric.py", line 86, in _wrapreduction
+    return ufunc.reduce(obj, axis, dtype, out, **passkwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: zero-size array to reduction operation minimum which has no identity
+
+2026-03-09 15:56:45,707 - ERROR - Error in the execution of the main program:: zero-size array to reduction operation minimum which has no identity
+2026-03-09 15:56:45,708 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 57, in spall_doi_finder
+    smin = np.min(power_cut)
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\numpy\_core\fromnumeric.py", line 3302, in min
+    return _wrapreduction(a, np.minimum, 'min', axis, None, out,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\numpy\_core\fromnumeric.py", line 86, in _wrapreduction
+    return ufunc.reduce(obj, axis, dtype, out, **passkwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: zero-size array to reduction operation minimum which has no identity
+
+2026-03-09 15:56:48,682 - ERROR - Error in the execution of the main program:: zero-size array to reduction operation minimum which has no identity
+2026-03-09 15:56:48,684 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 57, in spall_doi_finder
+    smin = np.min(power_cut)
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\numpy\_core\fromnumeric.py", line 3302, in min
+    return _wrapreduction(a, np.minimum, 'min', axis, None, out,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\numpy\_core\fromnumeric.py", line 86, in _wrapreduction
+    return ufunc.reduce(obj, axis, dtype, out, **passkwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: zero-size array to reduction operation minimum which has no identity
+
+2026-03-09 15:56:52,763 - ERROR - Error in the execution of the main program:: zero-size array to reduction operation minimum which has no identity
+2026-03-09 15:56:52,764 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 57, in spall_doi_finder
+    smin = np.min(power_cut)
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\numpy\_core\fromnumeric.py", line 3302, in min
+    return _wrapreduction(a, np.minimum, 'min', axis, None, out,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\numpy\_core\fromnumeric.py", line 86, in _wrapreduction
+    return ufunc.reduce(obj, axis, dtype, out, **passkwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: zero-size array to reduction operation minimum which has no identity
+
+2026-03-09 15:59:26,618 - ERROR - Error in the execution of the main program:: operands could not be broadcast together with shapes (5114,) (1,511999) 
+2026-03-09 15:59:26,622 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 205, in spall_doi_finder
+    t_doi_start_spec_idx = np.argmin(np.abs(t - t_doi_start))
+                                            ~~^~~~~~~~~~~~~
+ValueError: operands could not be broadcast together with shapes (5114,) (1,511999) 
+
+2026-03-10 19:49:15,443 - ERROR - Error in the execution of the main program:: operands could not be broadcast together with shapes (5114,) (1,511999) 
+2026-03-10 19:49:15,447 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 197, in spall_doi_finder
+    t_doi_start_spec_idx = np.argmin(np.abs(t - t_doi_start))
+                                            ~~^~~~~~~~~~~~~
+ValueError: operands could not be broadcast together with shapes (5114,) (1,511999) 
+
+2026-03-10 19:49:32,934 - ERROR - Error in the execution of the main program:: operands could not be broadcast together with shapes (5114,) (1,511999) 
+2026-03-10 19:49:32,942 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 197, in spall_doi_finder
+    t_doi_start_spec_idx = np.argmin(np.abs(t - t_doi_start))
+                                            ~~^~~~~~~~~~~~~
+ValueError: operands could not be broadcast together with shapes (5114,) (1,511999) 
+
+2026-03-10 19:49:59,361 - ERROR - Error in the execution of the main program:: operands could not be broadcast together with shapes (5114,) (1,511999) 
+2026-03-10 19:49:59,362 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 197, in spall_doi_finder
+    t_doi_start_spec_idx = np.argmin(np.abs(t - t_doi_start))
+                                            ~~^~~~~~~~~~~~~
+ValueError: operands could not be broadcast together with shapes (5114,) (1,511999) 
+
+2026-03-10 19:50:10,835 - ERROR - Error in the execution of the main program:: operands could not be broadcast together with shapes (5114,) (1,511999) 
+2026-03-10 19:50:10,836 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 197, in spall_doi_finder
+    t_doi_start_spec_idx = np.argmin(np.abs(t - t_doi_start))
+                                            ~~^~~~~~~~~~~~~
+ValueError: operands could not be broadcast together with shapes (5114,) (1,511999) 
+

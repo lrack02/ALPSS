@@ -8109,3 +8109,331 @@ Traceback (most recent call last):
              ^^^^^
 FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\lucas\\OneDrive - Johns Hopkins\\AIMDL_Laser_Shock Undergrads - Data - Data\\PDV_data\\input_data\\C1--20251020--00053_ch2.csv'
 
+2026-03-09 13:29:47,976 - ERROR - Error in the execution of the main program:: [Errno 2] No such file or directory: 'C:\\Users\\lucas\\OneDrive - Johns Hopkins\\Ramesh Lab - Research\\Papers\\MPDV\\pdv_data\\input_data\\C1--20260309--00001_ch1.csv'
+2026-03-09 13:29:48,009 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 22, in spall_doi_finder
+    data = pd.read_csv(fname, skiprows=int(rows_to_skip), nrows=int(nrows))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\lucas\\OneDrive - Johns Hopkins\\Ramesh Lab - Research\\Papers\\MPDV\\pdv_data\\input_data\\C1--20260309--00001_ch1.csv'
+
+2026-03-09 13:29:48,011 - ERROR - Error in the fallback visualization of the voltage signal: [Errno 2] No such file or directory: 'C:\\Users\\lucas\\OneDrive - Johns Hopkins\\Ramesh Lab - Research\\Papers\\MPDV\\pdv_data\\input_data\\C1--20260309--00001_ch1.csv'
+2026-03-09 13:29:48,013 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 22, in spall_doi_finder
+    data = pd.read_csv(fname, skiprows=int(rows_to_skip), nrows=int(nrows))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\lucas\\OneDrive - Johns Hopkins\\Ramesh Lab - Research\\Papers\\MPDV\\pdv_data\\input_data\\C1--20260309--00001_ch1.csv'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 114, in alpss_main
+    plot_voltage(**inputs)
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\plotting.py", line 495, in plot_voltage
+    data = pd.read_csv(
+           ^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\lucas\\OneDrive - Johns Hopkins\\Ramesh Lab - Research\\Papers\\MPDV\\pdv_data\\input_data\\C1--20260309--00001_ch1.csv'
+
+2026-03-09 13:35:11,808 - ERROR - Error in the execution of the main program:: operands could not be broadcast together with shapes (5114,) (1,511999) 
+2026-03-09 13:35:11,812 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 205, in spall_doi_finder
+    t_doi_start_spec_idx = np.argmin(np.abs(t - t_doi_start))
+                                            ~~^~~~~~~~~~~~~
+ValueError: operands could not be broadcast together with shapes (5114,) (1,511999) 
+
+2026-03-09 13:42:45,241 - ERROR - Error in the execution of the main program:: [Errno 2] No such file or directory: 'C:\\Users\\lucas\\OneDrive - Johns Hopkins\\Ramesh Lab - Research\\Papers\\MPDV\\pdv_data\\input_data\\Multi_PDV_test--20260309--00009_ch2.csv'
+2026-03-09 13:42:45,247 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 22, in spall_doi_finder
+    data = pd.read_csv(fname, skiprows=int(rows_to_skip), nrows=int(nrows))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\lucas\\OneDrive - Johns Hopkins\\Ramesh Lab - Research\\Papers\\MPDV\\pdv_data\\input_data\\Multi_PDV_test--20260309--00009_ch2.csv'
+
+2026-03-09 13:42:45,258 - ERROR - Error in the fallback visualization of the voltage signal: [Errno 2] No such file or directory: 'C:\\Users\\lucas\\OneDrive - Johns Hopkins\\Ramesh Lab - Research\\Papers\\MPDV\\pdv_data\\input_data\\Multi_PDV_test--20260309--00009_ch2.csv'
+2026-03-09 13:42:45,261 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 22, in spall_doi_finder
+    data = pd.read_csv(fname, skiprows=int(rows_to_skip), nrows=int(nrows))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\lucas\\OneDrive - Johns Hopkins\\Ramesh Lab - Research\\Papers\\MPDV\\pdv_data\\input_data\\Multi_PDV_test--20260309--00009_ch2.csv'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 114, in alpss_main
+    plot_voltage(**inputs)
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\plotting.py", line 495, in plot_voltage
+    data = pd.read_csv(
+           ^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\lucas\\OneDrive - Johns Hopkins\\Ramesh Lab - Research\\Papers\\MPDV\\pdv_data\\input_data\\Multi_PDV_test--20260309--00009_ch2.csv'
+
+2026-03-09 13:43:06,370 - ERROR - Error in the execution of the main program:: operands could not be broadcast together with shapes (5114,) (1,511999) 
+2026-03-09 13:43:06,372 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 205, in spall_doi_finder
+    t_doi_start_spec_idx = np.argmin(np.abs(t - t_doi_start))
+                                            ~~^~~~~~~~~~~~~
+ValueError: operands could not be broadcast together with shapes (5114,) (1,511999) 
+
+2026-03-09 13:43:55,986 - ERROR - Error in the execution of the main program:: operands could not be broadcast together with shapes (5114,) (1,511999) 
+2026-03-09 13:43:55,988 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 205, in spall_doi_finder
+    t_doi_start_spec_idx = np.argmin(np.abs(t - t_doi_start))
+                                            ~~^~~~~~~~~~~~~
+ValueError: operands could not be broadcast together with shapes (5114,) (1,511999) 
+
+2026-03-09 13:44:10,432 - ERROR - Error in the execution of the main program:: operands could not be broadcast together with shapes (5114,) (1,511999) 
+2026-03-09 13:44:10,434 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 205, in spall_doi_finder
+    t_doi_start_spec_idx = np.argmin(np.abs(t - t_doi_start))
+                                            ~~^~~~~~~~~~~~~
+ValueError: operands could not be broadcast together with shapes (5114,) (1,511999) 
+
+2026-03-09 13:44:34,182 - ERROR - Error in the execution of the main program:: operands could not be broadcast together with shapes (5114,) (1,511999) 
+2026-03-09 13:44:34,184 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 205, in spall_doi_finder
+    t_doi_start_spec_idx = np.argmin(np.abs(t - t_doi_start))
+                                            ~~^~~~~~~~~~~~~
+ValueError: operands could not be broadcast together with shapes (5114,) (1,511999) 
+
+2026-03-09 14:09:10,772 - ERROR - Error in the execution of the main program:: all input arrays must have the same shape
+2026-03-09 14:09:10,798 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 90, in alpss_main
+    df = save(
+         ^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\saving.py", line 30, in save
+    velocity_data_smooth = np.stack(
+                           ^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\numpy\_core\shape_base.py", line 460, in stack
+    raise ValueError('all input arrays must have the same shape')
+ValueError: all input arrays must have the same shape
+
+2026-03-09 14:10:50,204 - ERROR - Error in the execution of the main program:: all input arrays must have the same shape
+2026-03-09 14:10:50,208 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 90, in alpss_main
+    df = save(
+         ^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\saving.py", line 30, in save
+    displacement_data = np.stack(
+                        ^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\numpy\_core\shape_base.py", line 460, in stack
+    raise ValueError('all input arrays must have the same shape')
+ValueError: all input arrays must have the same shape
+
+2026-03-09 14:37:26,318 - ERROR - Error in the execution of the main program:: [Errno 2] No such file or directory: 'C:\\Users\\lucas\\OneDrive - Johns Hopkins\\Ramesh Lab - Research\\Papers\\MPDV\\pdv_data\\output_data_probe1\\Multi_PDV_test--20260309--00007_ch1--plots.png'
+2026-03-09 14:37:26,482 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 90, in alpss_main
+    df = save(
+         ^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\saving.py", line 18, in save
+    fig.savefig(
+  File "C:\Users\lucas\AppData\Roaming\Python\Python312\site-packages\matplotlib\figure.py", line 3490, in savefig
+    self.canvas.print_figure(fname, **kwargs)
+  File "C:\Users\lucas\AppData\Roaming\Python\Python312\site-packages\matplotlib\backend_bases.py", line 2184, in print_figure
+    result = print_method(
+             ^^^^^^^^^^^^^
+  File "C:\Users\lucas\AppData\Roaming\Python\Python312\site-packages\matplotlib\backend_bases.py", line 2040, in <lambda>
+    print_method = functools.wraps(meth)(lambda *args, **kwargs: meth(
+                                                                 ^^^^^
+  File "C:\Users\lucas\AppData\Roaming\Python\Python312\site-packages\matplotlib\backends\backend_agg.py", line 481, in print_png
+    self._print_pil(filename_or_obj, "png", pil_kwargs, metadata)
+  File "C:\Users\lucas\AppData\Roaming\Python\Python312\site-packages\matplotlib\backends\backend_agg.py", line 430, in _print_pil
+    mpl.image.imsave(
+  File "C:\Users\lucas\AppData\Roaming\Python\Python312\site-packages\matplotlib\image.py", line 1644, in imsave
+    image.save(fname, **pil_kwargs)
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\PIL\Image.py", line 2591, in save
+    fp = builtins.open(filename, "w+b")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\lucas\\OneDrive - Johns Hopkins\\Ramesh Lab - Research\\Papers\\MPDV\\pdv_data\\output_data_probe1\\Multi_PDV_test--20260309--00007_ch1--plots.png'
+
+2026-03-09 14:38:51,478 - ERROR - Error in the execution of the main program:: [Errno 2] No such file or directory: 'C:\\Users\\lucas\\OneDrive - Johns Hopkins\\Ramesh Lab - Research\\Papers\\MPDV\\pdv_data\\output_data_probe1\\Multi_PDV_test--20260309--00007_ch1--plots.png'
+2026-03-09 14:38:51,489 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 90, in alpss_main
+    df = save(
+         ^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\saving.py", line 19, in save
+    fig.savefig(
+  File "C:\Users\lucas\AppData\Roaming\Python\Python312\site-packages\matplotlib\figure.py", line 3490, in savefig
+    self.canvas.print_figure(fname, **kwargs)
+  File "C:\Users\lucas\AppData\Roaming\Python\Python312\site-packages\matplotlib\backend_bases.py", line 2184, in print_figure
+    result = print_method(
+             ^^^^^^^^^^^^^
+  File "C:\Users\lucas\AppData\Roaming\Python\Python312\site-packages\matplotlib\backend_bases.py", line 2040, in <lambda>
+    print_method = functools.wraps(meth)(lambda *args, **kwargs: meth(
+                                                                 ^^^^^
+  File "C:\Users\lucas\AppData\Roaming\Python\Python312\site-packages\matplotlib\backends\backend_agg.py", line 481, in print_png
+    self._print_pil(filename_or_obj, "png", pil_kwargs, metadata)
+  File "C:\Users\lucas\AppData\Roaming\Python\Python312\site-packages\matplotlib\backends\backend_agg.py", line 430, in _print_pil
+    mpl.image.imsave(
+  File "C:\Users\lucas\AppData\Roaming\Python\Python312\site-packages\matplotlib\image.py", line 1644, in imsave
+    image.save(fname, **pil_kwargs)
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\PIL\Image.py", line 2591, in save
+    fp = builtins.open(filename, "w+b")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\lucas\\OneDrive - Johns Hopkins\\Ramesh Lab - Research\\Papers\\MPDV\\pdv_data\\output_data_probe1\\Multi_PDV_test--20260309--00007_ch1--plots.png'
+
+2026-03-09 14:41:14,714 - ERROR - Error in the execution of the main program:: [Errno 2] No such file or directory: 'C:\\Users\\lucas\\OneDrive - Johns Hopkins\\Ramesh Lab - Research\\Papers\\MPDV\\pdv_data\\output_data_probe1\\Multi_PDV_test--20260309--00007_ch1--plots.png'
+2026-03-09 14:41:14,720 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 90, in alpss_main
+    df = save(
+         ^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\saving.py", line 19, in save
+    fig.savefig(
+  File "C:\Users\lucas\AppData\Roaming\Python\Python312\site-packages\matplotlib\figure.py", line 3490, in savefig
+    self.canvas.print_figure(fname, **kwargs)
+  File "C:\Users\lucas\AppData\Roaming\Python\Python312\site-packages\matplotlib\backend_bases.py", line 2184, in print_figure
+    result = print_method(
+             ^^^^^^^^^^^^^
+  File "C:\Users\lucas\AppData\Roaming\Python\Python312\site-packages\matplotlib\backend_bases.py", line 2040, in <lambda>
+    print_method = functools.wraps(meth)(lambda *args, **kwargs: meth(
+                                                                 ^^^^^
+  File "C:\Users\lucas\AppData\Roaming\Python\Python312\site-packages\matplotlib\backends\backend_agg.py", line 481, in print_png
+    self._print_pil(filename_or_obj, "png", pil_kwargs, metadata)
+  File "C:\Users\lucas\AppData\Roaming\Python\Python312\site-packages\matplotlib\backends\backend_agg.py", line 430, in _print_pil
+    mpl.image.imsave(
+  File "C:\Users\lucas\AppData\Roaming\Python\Python312\site-packages\matplotlib\image.py", line 1644, in imsave
+    image.save(fname, **pil_kwargs)
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\PIL\Image.py", line 2591, in save
+    fp = builtins.open(filename, "w+b")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\lucas\\OneDrive - Johns Hopkins\\Ramesh Lab - Research\\Papers\\MPDV\\pdv_data\\output_data_probe1\\Multi_PDV_test--20260309--00007_ch1--plots.png'
+
+2026-03-09 14:42:16,323 - ERROR - Error in the execution of the main program:: [Errno 2] No such file or directory: 'C:\\Users\\lucas\\OneDrive - Johns Hopkins\\Ramesh Lab - Research\\Papers\\MPDV\\pdv_data\\output_data_probe1\\Multi_PDV_test--20260309--00007_ch1--plots.png'
+2026-03-09 14:42:16,341 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 90, in alpss_main
+    df = save(
+         ^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\saving.py", line 19, in save
+    fig.savefig(
+  File "C:\Users\lucas\AppData\Roaming\Python\Python312\site-packages\matplotlib\figure.py", line 3490, in savefig
+    self.canvas.print_figure(fname, **kwargs)
+  File "C:\Users\lucas\AppData\Roaming\Python\Python312\site-packages\matplotlib\backend_bases.py", line 2184, in print_figure
+    result = print_method(
+             ^^^^^^^^^^^^^
+  File "C:\Users\lucas\AppData\Roaming\Python\Python312\site-packages\matplotlib\backend_bases.py", line 2040, in <lambda>
+    print_method = functools.wraps(meth)(lambda *args, **kwargs: meth(
+                                                                 ^^^^^
+  File "C:\Users\lucas\AppData\Roaming\Python\Python312\site-packages\matplotlib\backends\backend_agg.py", line 481, in print_png
+    self._print_pil(filename_or_obj, "png", pil_kwargs, metadata)
+  File "C:\Users\lucas\AppData\Roaming\Python\Python312\site-packages\matplotlib\backends\backend_agg.py", line 430, in _print_pil
+    mpl.image.imsave(
+  File "C:\Users\lucas\AppData\Roaming\Python\Python312\site-packages\matplotlib\image.py", line 1644, in imsave
+    image.save(fname, **pil_kwargs)
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\PIL\Image.py", line 2591, in save
+    fp = builtins.open(filename, "w+b")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\lucas\\OneDrive - Johns Hopkins\\Ramesh Lab - Research\\Papers\\MPDV\\pdv_data\\output_data_probe1\\Multi_PDV_test--20260309--00007_ch1--plots.png'
+

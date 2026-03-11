@@ -17,7 +17,7 @@ for name, channel in channels.items():
         freq_max = upshift + 1
 
         alpss_main(
-            filepath=r"C:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Papers\MPDV\pdv_data\input_data\Multi_PDV_test--20260309--00008_"+name+".csv",
+            filepath=r"C:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Papers\MPDV\pdv_data\input_data\Multi_PDV_test--20260309--00006_"+name+".csv",
             multipoint_probe = probe_number,
             save_data="yes",
             start_time_user='cusum', #cusum, explicit start time, or none
@@ -65,7 +65,7 @@ for name, channel in channels.items():
             theta=0,
             delta_theta=5,
             out_files_dir=(r"C:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Papers\MPDV\pdv_data\output_data"),
-            display_plots="no",
+            display_plots="yes",
             spall_calculation="no",
             plot_figsize=(30, 10),
             plot_dpi=100,
