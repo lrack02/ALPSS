@@ -46,36 +46,30 @@ def carrier_filter(sdf_out, cen, **inputs):
 
         # parameters from the other filter type not needed
         time_fitting = 'none'
-        time_domain_carrier = 'none'
+        carrier_fitting = 'none'
         sin_fit = 'none'
         display_freq = 'none'
         display_vals = 'none'
         display_vals_filtered = 'none'
 
     elif inputs["carrier_filter_type"] == 'sin_fit_subtract':
-        all_freq = fftfreq(voltage.size,1/fs)
         tmin = t_fit_begin
         tmax = t_fit_end
 
         # perform FFT of carrier band from time tmin to tmax to determine find peaks from both carrier and dopplar signal
-        carrier_analysis_time_mask = (time>(t_start_corrected + tmin)) & (time<(t_start_corrected + tmax))
-        time_fitting = time[carrier_analysis_time_mask]
-        fft_vals = fft(voltage[carrier_analysis_time_mask])
-        freq = fftfreq(voltage[carrier_analysis_time_mask].size,1/fs)
+        carrier_analysis_mask = (time>(t_start_corrected + tmin)) & (time<(t_start_corrected + tmax))
+        
+        freq = fftfreq(voltage.size,1/fs)
+        fft_vals = fft(voltage)
+        bandpass_filt = (freq>(cen-wid/2)) & (freq<(cen+wid/2))
 
-        # extract out the carrier band peak using the already known frequency from the carrier_frequency function and the wid parameter
-        mask_sin_fit = (freq>(cen-wid/2)) & (freq<(cen+wid/2))
+        # Apply bandpass filter
+        time_domain_carrier = ifft(fft_vals*bandpass_filt).real
 
-        # the fft vals and frequencies corresponding to only the carrier peak
-        fft_vals_masked = fft_vals[mask_sin_fit]
-        fft_freq_masked = freq[mask_sin_fit]
-
-        full_fft = np.zeros_like(fft_vals, dtype=complex)
-        full_fft[mask_sin_fit] = fft_vals_masked
-
-        # the corresponding time domain for the isolated carrier band
-        time_domain_carrier = np.real(ifft(full_fft))
-
+        # Fitting is only performed on a small portion of the carrier band
+        time_fitting = time[carrier_analysis_mask]
+        carrier_fitting = time_domain_carrier[carrier_analysis_mask]
+        
         # fit the time domain carrier band with a sine function
         def sin_func(x, a, b, c, d):
             return a * np.sin(2 * np.pi * b * x + c) + d
@@ -83,7 +77,7 @@ def carrier_filter(sdf_out, cen, **inputs):
         try:
             # fit a sinusoid to the data
             popt, pcov = curve_fit(
-                sin_func, time_fitting, time_domain_carrier, p0=[(np.max(time_domain_carrier) - np.min(time_domain_carrier)) / 2, cen, 0, 0]
+                sin_func, time_fitting, carrier_fitting, p0=[(np.max(time_domain_carrier) - np.min(time_domain_carrier)) / 2, cen, 0, 0]
             )
         except Exception:
             # if sin fitting doesn't work set the fitting parameters to be zeros
@@ -94,7 +88,7 @@ def carrier_filter(sdf_out, cen, **inputs):
         sin_fit = sin_func(time_fitting,*popt)
 
         # filter out any frequencies not in the user specified frequency bounds
-        frequency_mask = (all_freq>f_min) & (all_freq<f_max)
+        frequency_mask = (freq>f_min) & (freq<f_max)
         voltage_filt = ifft(fft(voltage)*frequency_mask).real
 
         # subtract the carrier band fit
@@ -104,12 +98,11 @@ def carrier_filter(sdf_out, cen, **inputs):
         display_vals = fft_vals[freq>0]
         display_freq = freq[freq>0]
 
-        fft_vals_filtered = fft(voltage_filt[carrier_analysis_time_mask])
-        display_vals_filtered = fft_vals_filtered[freq>0]
+        display_vals_filtered = fft_vals[freq>0]
     else: 
         voltage_filt = voltage
         time_fitting = 'none'
-        time_domain_carrier = 'none'
+        carrier_fitting = 'none'
         sin_fit = 'none'
         display_freq = 'none'
         display_vals = 'none'
@@ -133,7 +126,7 @@ def carrier_filter(sdf_out, cen, **inputs):
     cf_out = {
         "voltage_filt": voltage_filt,
         "time_fitting": time_fitting,
-        "carrier_fitting": time_domain_carrier,
+        "carrier_fitting": carrier_fitting,
         "sin_fitting": sin_fit,
         "freq": display_freq,
         "fft_vals": display_vals,

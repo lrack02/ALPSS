@@ -8437,3 +8437,646 @@ FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\lucas\\OneDr
          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\lucas\\OneDrive - Johns Hopkins\\Ramesh Lab - Research\\Papers\\MPDV\\pdv_data\\output_data_probe1\\Multi_PDV_test--20260309--00007_ch1--plots.png'
 
+2026-03-13 13:01:53,987 - ERROR - Error in the execution of the main program:: operands could not be broadcast together with shapes (3834,) (1,383999) 
+2026-03-13 13:01:54,020 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 197, in spall_doi_finder
+    t_doi_start_spec_idx = np.argmin(np.abs(t - t_doi_start))
+                                            ~~^~~~~~~~~~~~~
+ValueError: operands could not be broadcast together with shapes (3834,) (1,383999) 
+
+2026-03-13 14:13:38,598 - ERROR - Error in the execution of the main program:: Input variable "smoothing_window" must be an odd integer and less than half the length of the velocity signal
+2026-03-13 14:13:38,648 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 51, in alpss_main
+    vc_out = velocity_calculation(sdf_out, cen, cf_out, **inputs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\velocity_calculation.py", line 57, in velocity_calculation
+    velocity_f_smooth = smoothing(
+                        ^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\smoothing.py", line 16, in smoothing
+    raise Exception('Input variable "smoothing_window" must be an odd integer and less than half the length of '
+Exception: Input variable "smoothing_window" must be an odd integer and less than half the length of the velocity signal
+
+2026-03-13 14:19:13,688 - ERROR - Error in the execution of the main program:: operands could not be broadcast together with shapes (6394,) (1,639998) 
+2026-03-13 14:19:13,690 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 197, in spall_doi_finder
+    t_doi_start_spec_idx = np.argmin(np.abs(t - t_doi_start))
+                                            ~~^~~~~~~~~~~~~
+ValueError: operands could not be broadcast together with shapes (6394,) (1,639998) 
+
+2026-03-13 14:22:51,936 - ERROR - Error in the execution of the main program:: operands could not be broadcast together with shapes (6394,) (1,639998) 
+2026-03-13 14:22:51,938 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 197, in spall_doi_finder
+    t_doi_start_spec_idx = np.argmin(np.abs(t - t_doi_start))
+                                            ~~^~~~~~~~~~~~~
+ValueError: operands could not be broadcast together with shapes (6394,) (1,639998) 
+
+2026-03-13 14:44:14,156 - ERROR - Error in the execution of the main program:: Error tokenizing data. C error: Expected 1 fields in line 23, saw 2
+
+2026-03-13 14:44:14,209 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 23, in spall_doi_finder
+    data = pd.read_csv(fname, skiprows=int(rows_to_skip), nrows=int(nrows))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 626, in _read
+    return parser.read(nrows)
+           ^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1923, in read
+    ) = self._engine.read(  # type: ignore[attr-defined]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\c_parser_wrapper.py", line 234, in read
+    chunks = self._reader.read_low_memory(nrows)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "parsers.pyx", line 850, in pandas._libs.parsers.TextReader.read_low_memory
+  File "parsers.pyx", line 905, in pandas._libs.parsers.TextReader._read_rows
+  File "parsers.pyx", line 874, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "parsers.pyx", line 891, in pandas._libs.parsers.TextReader._check_tokenize_status
+  File "parsers.pyx", line 2061, in pandas._libs.parsers.raise_parser_error
+pandas.errors.ParserError: Error tokenizing data. C error: Expected 1 fields in line 23, saw 2
+
+
+2026-03-13 14:44:14,214 - ERROR - Error in the fallback visualization of the voltage signal: Error tokenizing data. C error: Expected 1 fields in line 23, saw 2
+
+2026-03-13 14:44:14,232 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 23, in spall_doi_finder
+    data = pd.read_csv(fname, skiprows=int(rows_to_skip), nrows=int(nrows))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 626, in _read
+    return parser.read(nrows)
+           ^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1923, in read
+    ) = self._engine.read(  # type: ignore[attr-defined]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\c_parser_wrapper.py", line 234, in read
+    chunks = self._reader.read_low_memory(nrows)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "parsers.pyx", line 850, in pandas._libs.parsers.TextReader.read_low_memory
+  File "parsers.pyx", line 905, in pandas._libs.parsers.TextReader._read_rows
+  File "parsers.pyx", line 874, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "parsers.pyx", line 891, in pandas._libs.parsers.TextReader._check_tokenize_status
+  File "parsers.pyx", line 2061, in pandas._libs.parsers.raise_parser_error
+pandas.errors.ParserError: Error tokenizing data. C error: Expected 1 fields in line 23, saw 2
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 114, in alpss_main
+    plot_voltage(**inputs)
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\plotting.py", line 495, in plot_voltage
+    data = pd.read_csv(
+           ^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 626, in _read
+    return parser.read(nrows)
+           ^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1923, in read
+    ) = self._engine.read(  # type: ignore[attr-defined]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\c_parser_wrapper.py", line 234, in read
+    chunks = self._reader.read_low_memory(nrows)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "parsers.pyx", line 850, in pandas._libs.parsers.TextReader.read_low_memory
+  File "parsers.pyx", line 905, in pandas._libs.parsers.TextReader._read_rows
+  File "parsers.pyx", line 874, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "parsers.pyx", line 891, in pandas._libs.parsers.TextReader._check_tokenize_status
+  File "parsers.pyx", line 2061, in pandas._libs.parsers.raise_parser_error
+pandas.errors.ParserError: Error tokenizing data. C error: Expected 1 fields in line 23, saw 2
+
+
+2026-03-13 14:45:11,798 - ERROR - Error in the execution of the main program:: Error tokenizing data. C error: Expected 1 fields in line 23, saw 2
+
+2026-03-13 14:45:11,799 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 23, in spall_doi_finder
+    data = pd.read_csv(fname, skiprows=int(rows_to_skip), nrows=int(nrows))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 626, in _read
+    return parser.read(nrows)
+           ^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1923, in read
+    ) = self._engine.read(  # type: ignore[attr-defined]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\c_parser_wrapper.py", line 234, in read
+    chunks = self._reader.read_low_memory(nrows)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "parsers.pyx", line 850, in pandas._libs.parsers.TextReader.read_low_memory
+  File "parsers.pyx", line 905, in pandas._libs.parsers.TextReader._read_rows
+  File "parsers.pyx", line 874, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "parsers.pyx", line 891, in pandas._libs.parsers.TextReader._check_tokenize_status
+  File "parsers.pyx", line 2061, in pandas._libs.parsers.raise_parser_error
+pandas.errors.ParserError: Error tokenizing data. C error: Expected 1 fields in line 23, saw 2
+
+
+2026-03-13 14:45:11,804 - ERROR - Error in the fallback visualization of the voltage signal: Error tokenizing data. C error: Expected 1 fields in line 23, saw 2
+
+2026-03-13 14:45:11,806 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 23, in spall_doi_finder
+    data = pd.read_csv(fname, skiprows=int(rows_to_skip), nrows=int(nrows))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 626, in _read
+    return parser.read(nrows)
+           ^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1923, in read
+    ) = self._engine.read(  # type: ignore[attr-defined]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\c_parser_wrapper.py", line 234, in read
+    chunks = self._reader.read_low_memory(nrows)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "parsers.pyx", line 850, in pandas._libs.parsers.TextReader.read_low_memory
+  File "parsers.pyx", line 905, in pandas._libs.parsers.TextReader._read_rows
+  File "parsers.pyx", line 874, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "parsers.pyx", line 891, in pandas._libs.parsers.TextReader._check_tokenize_status
+  File "parsers.pyx", line 2061, in pandas._libs.parsers.raise_parser_error
+pandas.errors.ParserError: Error tokenizing data. C error: Expected 1 fields in line 23, saw 2
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 114, in alpss_main
+    plot_voltage(**inputs)
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\plotting.py", line 495, in plot_voltage
+    data = pd.read_csv(
+           ^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 626, in _read
+    return parser.read(nrows)
+           ^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1923, in read
+    ) = self._engine.read(  # type: ignore[attr-defined]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\c_parser_wrapper.py", line 234, in read
+    chunks = self._reader.read_low_memory(nrows)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "parsers.pyx", line 850, in pandas._libs.parsers.TextReader.read_low_memory
+  File "parsers.pyx", line 905, in pandas._libs.parsers.TextReader._read_rows
+  File "parsers.pyx", line 874, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "parsers.pyx", line 891, in pandas._libs.parsers.TextReader._check_tokenize_status
+  File "parsers.pyx", line 2061, in pandas._libs.parsers.raise_parser_error
+pandas.errors.ParserError: Error tokenizing data. C error: Expected 1 fields in line 23, saw 2
+
+
+2026-03-13 14:45:50,683 - ERROR - Error in the execution of the main program:: Input variable "smoothing_window" must be an odd integer and less than half the length of the velocity signal
+2026-03-13 14:45:50,687 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 51, in alpss_main
+    vc_out = velocity_calculation(sdf_out, cen, cf_out, **inputs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\velocity_calculation.py", line 57, in velocity_calculation
+    velocity_f_smooth = smoothing(
+                        ^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\smoothing.py", line 16, in smoothing
+    raise Exception('Input variable "smoothing_window" must be an odd integer and less than half the length of '
+Exception: Input variable "smoothing_window" must be an odd integer and less than half the length of the velocity signal
+
+2026-03-13 14:46:12,474 - ERROR - Error in the execution of the main program:: Input variable "smoothing_window" must be an odd integer and less than half the length of the velocity signal
+2026-03-13 14:46:12,476 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 51, in alpss_main
+    vc_out = velocity_calculation(sdf_out, cen, cf_out, **inputs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\velocity_calculation.py", line 57, in velocity_calculation
+    velocity_f_smooth = smoothing(
+                        ^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\smoothing.py", line 16, in smoothing
+    raise Exception('Input variable "smoothing_window" must be an odd integer and less than half the length of '
+Exception: Input variable "smoothing_window" must be an odd integer and less than half the length of the velocity signal
+
+2026-03-13 14:46:26,523 - ERROR - Error in the execution of the main program:: Input variable "smoothing_window" must be an odd integer and less than half the length of the velocity signal
+2026-03-13 14:46:26,527 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 51, in alpss_main
+    vc_out = velocity_calculation(sdf_out, cen, cf_out, **inputs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\velocity_calculation.py", line 57, in velocity_calculation
+    velocity_f_smooth = smoothing(
+                        ^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\smoothing.py", line 16, in smoothing
+    raise Exception('Input variable "smoothing_window" must be an odd integer and less than half the length of '
+Exception: Input variable "smoothing_window" must be an odd integer and less than half the length of the velocity signal
+
+2026-03-13 14:48:12,686 - ERROR - Error in the execution of the main program:: Input variable "smoothing_window" must be an odd integer and less than half the length of the velocity signal
+2026-03-13 14:48:12,689 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 51, in alpss_main
+    vc_out = velocity_calculation(sdf_out, cen, cf_out, **inputs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\velocity_calculation.py", line 57, in velocity_calculation
+    velocity_f_smooth = smoothing(
+                        ^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\smoothing.py", line 16, in smoothing
+    raise Exception('Input variable "smoothing_window" must be an odd integer and less than half the length of '
+Exception: Input variable "smoothing_window" must be an odd integer and less than half the length of the velocity signal
+
+2026-03-13 14:48:34,622 - ERROR - Error in the execution of the main program:: Input variable "smoothing_window" must be an odd integer and less than half the length of the velocity signal
+2026-03-13 14:48:34,625 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 51, in alpss_main
+    vc_out = velocity_calculation(sdf_out, cen, cf_out, **inputs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\velocity_calculation.py", line 57, in velocity_calculation
+    velocity_f_smooth = smoothing(
+                        ^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\smoothing.py", line 16, in smoothing
+    raise Exception('Input variable "smoothing_window" must be an odd integer and less than half the length of '
+Exception: Input variable "smoothing_window" must be an odd integer and less than half the length of the velocity signal
+
+2026-03-13 14:49:17,590 - ERROR - Error in the execution of the main program:: Input variable "smoothing_window" must be an odd integer and less than half the length of the velocity signal
+2026-03-13 14:49:17,592 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 51, in alpss_main
+    vc_out = velocity_calculation(sdf_out, cen, cf_out, **inputs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\velocity_calculation.py", line 57, in velocity_calculation
+    velocity_f_smooth = smoothing(
+                        ^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\smoothing.py", line 16, in smoothing
+    raise Exception('Input variable "smoothing_window" must be an odd integer and less than half the length of '
+Exception: Input variable "smoothing_window" must be an odd integer and less than half the length of the velocity signal
+
+2026-03-13 14:51:31,117 - ERROR - Error in the execution of the main program:: Input variable "smoothing_window" must be an odd integer and less than half the length of the velocity signal
+2026-03-13 14:51:31,119 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 51, in alpss_main
+    vc_out = velocity_calculation(sdf_out, cen, cf_out, **inputs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\velocity_calculation.py", line 57, in velocity_calculation
+    velocity_f_smooth = smoothing(
+                        ^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\smoothing.py", line 16, in smoothing
+    raise Exception('Input variable "smoothing_window" must be an odd integer and less than half the length of '
+Exception: Input variable "smoothing_window" must be an odd integer and less than half the length of the velocity signal
+
+2026-03-13 14:52:21,075 - ERROR - Error in the execution of the main program:: Input variable "smoothing_window" must be an odd integer and less than half the length of the velocity signal
+2026-03-13 14:52:21,076 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 51, in alpss_main
+    vc_out = velocity_calculation(sdf_out, cen, cf_out, **inputs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\velocity_calculation.py", line 57, in velocity_calculation
+    velocity_f_smooth = smoothing(
+                        ^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\smoothing.py", line 16, in smoothing
+    raise Exception('Input variable "smoothing_window" must be an odd integer and less than half the length of '
+Exception: Input variable "smoothing_window" must be an odd integer and less than half the length of the velocity signal
+
+2026-03-13 14:52:47,104 - ERROR - Error in the execution of the main program:: Input variable "smoothing_window" must be an odd integer and less than half the length of the velocity signal
+2026-03-13 14:52:47,105 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 51, in alpss_main
+    vc_out = velocity_calculation(sdf_out, cen, cf_out, **inputs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\velocity_calculation.py", line 57, in velocity_calculation
+    velocity_f_smooth = smoothing(
+                        ^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\smoothing.py", line 16, in smoothing
+    raise Exception('Input variable "smoothing_window" must be an odd integer and less than half the length of '
+Exception: Input variable "smoothing_window" must be an odd integer and less than half the length of the velocity signal
+
+2026-03-13 14:53:07,065 - ERROR - Error in the execution of the main program:: polyorder must be less than window_length.
+2026-03-13 14:53:07,192 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 173, in spall_doi_finder
+    signal = np.gradient(savgol_filter(phas,inputs["smoothing_window"],3))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\scipy\signal\_savitzky_golay.py", line 341, in savgol_filter
+    coeffs = savgol_coeffs(window_length, polyorder, deriv=deriv, delta=delta)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\scipy\signal\_savitzky_golay.py", line 101, in savgol_coeffs
+    raise ValueError("polyorder must be less than window_length.")
+ValueError: polyorder must be less than window_length.
+
+2026-03-13 14:53:18,914 - ERROR - Error in the execution of the main program:: Input variable "smoothing_window" must be an odd integer and less than half the length of the velocity signal
+2026-03-13 14:53:18,916 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 51, in alpss_main
+    vc_out = velocity_calculation(sdf_out, cen, cf_out, **inputs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\velocity_calculation.py", line 57, in velocity_calculation
+    velocity_f_smooth = smoothing(
+                        ^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\smoothing.py", line 16, in smoothing
+    raise Exception('Input variable "smoothing_window" must be an odd integer and less than half the length of '
+Exception: Input variable "smoothing_window" must be an odd integer and less than half the length of the velocity signal
+
+2026-03-13 14:53:43,723 - ERROR - Error in the execution of the main program:: Input variable "smoothing_window" must be an odd integer and less than half the length of the velocity signal
+2026-03-13 14:53:43,724 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 51, in alpss_main
+    vc_out = velocity_calculation(sdf_out, cen, cf_out, **inputs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\velocity_calculation.py", line 57, in velocity_calculation
+    velocity_f_smooth = smoothing(
+                        ^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\smoothing.py", line 16, in smoothing
+    raise Exception('Input variable "smoothing_window" must be an odd integer and less than half the length of '
+Exception: Input variable "smoothing_window" must be an odd integer and less than half the length of the velocity signal
+
+2026-03-13 15:04:47,651 - ERROR - Error in the execution of the main program:: Input variable "smoothing_window" must be an odd integer and less than half the length of the velocity signal
+2026-03-13 15:04:47,653 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 51, in alpss_main
+    vc_out = velocity_calculation(sdf_out, cen, cf_out, **inputs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\velocity_calculation.py", line 57, in velocity_calculation
+    velocity_f_smooth = smoothing(
+                        ^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\smoothing.py", line 16, in smoothing
+    raise Exception('Input variable "smoothing_window" must be an odd integer and less than half the length of '
+Exception: Input variable "smoothing_window" must be an odd integer and less than half the length of the velocity signal
+
+2026-03-13 15:05:09,655 - ERROR - Error in the execution of the main program:: Input variable "smoothing_window" must be an odd integer and less than half the length of the velocity signal
+2026-03-13 15:05:09,676 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 51, in alpss_main
+    vc_out = velocity_calculation(sdf_out, cen, cf_out, **inputs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\velocity_calculation.py", line 57, in velocity_calculation
+    velocity_f_smooth = smoothing(
+                        ^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\smoothing.py", line 16, in smoothing
+    raise Exception('Input variable "smoothing_window" must be an odd integer and less than half the length of '
+Exception: Input variable "smoothing_window" must be an odd integer and less than half the length of the velocity signal
+
+2026-03-13 15:06:31,050 - ERROR - Error in the execution of the main program:: operands could not be broadcast together with shapes (6267,) (1,627200) 
+2026-03-13 15:06:31,052 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 205, in spall_doi_finder
+    t_doi_start_spec_idx = np.argmin(np.abs(t - t_doi_start))
+                                            ~~^~~~~~~~~~~~~
+ValueError: operands could not be broadcast together with shapes (6267,) (1,627200) 
+
+2026-03-13 15:07:17,653 - ERROR - Error in the execution of the main program:: operands could not be broadcast together with shapes (6267,) (1,627200) 
+2026-03-13 15:07:17,657 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 205, in spall_doi_finder
+    t_doi_start_spec_idx = np.argmin(np.abs(t - t_doi_start))
+                                            ~~^~~~~~~~~~~~~
+ValueError: operands could not be broadcast together with shapes (6267,) (1,627200) 
+
+2026-03-13 15:26:36,246 - ERROR - Error in the execution of the main program:: operands could not be broadcast together with shapes (6139,) (1,614400) 
+2026-03-13 15:26:36,284 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 205, in spall_doi_finder
+    t_doi_start_spec_idx = np.argmin(np.abs(t - t_doi_start))
+                                            ~~^~~~~~~~~~~~~
+ValueError: operands could not be broadcast together with shapes (6139,) (1,614400) 
+
+2026-03-13 15:28:01,848 - ERROR - Error in the execution of the main program:: operands could not be broadcast together with shapes (6139,) (1,614400) 
+2026-03-13 15:28:01,851 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 205, in spall_doi_finder
+    t_doi_start_spec_idx = np.argmin(np.abs(t - t_doi_start))
+                                            ~~^~~~~~~~~~~~~
+ValueError: operands could not be broadcast together with shapes (6139,) (1,614400) 
+
+2026-03-13 16:00:36,249 - ERROR - Error in the execution of the main program:: operands could not be broadcast together with shapes (6395,) (1,640000) 
+2026-03-13 16:00:36,259 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 205, in spall_doi_finder
+    t_doi_start_spec_idx = np.argmin(np.abs(t - t_doi_start))
+                                            ~~^~~~~~~~~~~~~
+ValueError: operands could not be broadcast together with shapes (6395,) (1,640000) 
+
+2026-03-13 16:09:09,927 - ERROR - Error in the execution of the main program:: operands could not be broadcast together with shapes (1019,) (1,102400) 
+2026-03-13 16:09:09,933 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 205, in spall_doi_finder
+    t_doi_start_spec_idx = np.argmin(np.abs(t - t_doi_start))
+                                            ~~^~~~~~~~~~~~~
+ValueError: operands could not be broadcast together with shapes (1019,) (1,102400) 
+
+2026-03-14 09:59:49,810 - ERROR - Error in the execution of the main program:: boolean index did not match indexed array along axis 0; size of axis is 6400 but size of corresponding boolean axis is 640000
+2026-03-14 09:59:49,837 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 48, in alpss_main
+    cf_out = carrier_filter(sdf_out, cen, **inputs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\carrier_filter.py", line 103, in carrier_filter
+    display_vals_filtered = fft_vals_filtered[freq>0]
+                            ~~~~~~~~~~~~~~~~~^^^^^^^^
+IndexError: boolean index did not match indexed array along axis 0; size of axis is 6400 but size of corresponding boolean axis is 640000
+
+2026-03-14 10:05:51,787 - ERROR - Error in the execution of the main program:: boolean index did not match indexed array along axis 0; size of axis is 6400 but size of corresponding boolean axis is 640000
+2026-03-14 10:05:51,791 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 48, in alpss_main
+    cf_out = carrier_filter(sdf_out, cen, **inputs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\carrier_filter.py", line 102, in carrier_filter
+    display_vals_filtered = fft_vals_filtered[freq>0]
+                            ~~~~~~~~~~~~~~~~~^^^^^^^^
+IndexError: boolean index did not match indexed array along axis 0; size of axis is 6400 but size of corresponding boolean axis is 640000
+
+2026-03-14 10:06:38,213 - ERROR - Error in the execution of the main program:: x and y must have same first dimension, but have shapes (6400,) and (640000,)
+2026-03-14 10:06:38,275 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 66, in alpss_main
+    fig = plot_results(
+          ^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\plotting.py", line 265, in plot_results
+    ax7.plot(
+  File "C:\Users\lucas\AppData\Roaming\Python\Python312\site-packages\matplotlib\axes\_axes.py", line 1777, in plot
+    lines = [*self._get_lines(self, *args, data=data, **kwargs)]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lucas\AppData\Roaming\Python\Python312\site-packages\matplotlib\axes\_base.py", line 297, in __call__
+    yield from self._plot_args(
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\lucas\AppData\Roaming\Python\Python312\site-packages\matplotlib\axes\_base.py", line 494, in _plot_args
+    raise ValueError(f"x and y must have same first dimension, but "
+ValueError: x and y must have same first dimension, but have shapes (6400,) and (640000,)
+
+2026-03-14 10:15:47,645 - ERROR - Error in the execution of the main program:: Input variable "smoothing_window" must be an odd integer and less than half the length of the velocity signal
+2026-03-14 10:15:47,650 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 51, in alpss_main
+    vc_out = velocity_calculation(sdf_out, cen, cf_out, **inputs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\velocity_calculation.py", line 57, in velocity_calculation
+    velocity_f_smooth = smoothing(
+                        ^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\smoothing.py", line 16, in smoothing
+    raise Exception('Input variable "smoothing_window" must be an odd integer and less than half the length of '
+Exception: Input variable "smoothing_window" must be an odd integer and less than half the length of the velocity signal
+
+2026-03-17 09:55:35,423 - ERROR - Error in the execution of the main program:: operands could not be broadcast together with shapes (6394,) (1,639998) 
+2026-03-17 09:55:35,428 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 202, in spall_doi_finder
+    t_doi_start_spec_idx = np.argmin(np.abs(t - t_doi_start))
+                                            ~~^~~~~~~~~~~~~
+ValueError: operands could not be broadcast together with shapes (6394,) (1,639998) 
+
+2026-03-17 10:00:25,114 - ERROR - Error in the execution of the main program:: Input variable "smoothing_window" must be an odd integer and less than half the length of the velocity signal
+2026-03-17 10:00:25,144 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 51, in alpss_main
+    vc_out = velocity_calculation(sdf_out, cen, cf_out, **inputs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\velocity_calculation.py", line 57, in velocity_calculation
+    velocity_f_smooth = smoothing(
+                        ^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\smoothing.py", line 16, in smoothing
+    raise Exception('Input variable "smoothing_window" must be an odd integer and less than half the length of '
+Exception: Input variable "smoothing_window" must be an odd integer and less than half the length of the velocity signal
+
+2026-03-17 10:01:15,041 - ERROR - Error in the execution of the main program:: cannot access local variable 'carrier_fitting' where it is not associated with a value
+2026-03-17 10:01:15,044 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 48, in alpss_main
+    cf_out = carrier_filter(sdf_out, cen, **inputs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\carrier_filter.py", line 129, in carrier_filter
+    "carrier_fitting": carrier_fitting,
+                       ^^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'carrier_fitting' where it is not associated with a value
+
+2026-03-17 10:01:32,647 - ERROR - Error in the execution of the main program:: cannot access local variable 'carrier_fitting' where it is not associated with a value
+2026-03-17 10:01:32,649 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 48, in alpss_main
+    cf_out = carrier_filter(sdf_out, cen, **inputs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\carrier_filter.py", line 129, in carrier_filter
+    "carrier_fitting": carrier_fitting,
+                       ^^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'carrier_fitting' where it is not associated with a value
+
+2026-03-17 10:05:06,604 - ERROR - Error in the execution of the main program:: [Errno 2] No such file or directory: 'C:\\Users\\lucas\\OneDrive - Johns Hopkins\\Ramesh Lab - Research\\Papers\\MPDV\\pdv_data\\input_data\\pdv_calcite--20260313--00018.csv'
+2026-03-17 10:05:06,689 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 23, in spall_doi_finder
+    data = pd.read_csv(fname, skiprows=int(rows_to_skip), nrows=int(nrows))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\lucas\\OneDrive - Johns Hopkins\\Ramesh Lab - Research\\Papers\\MPDV\\pdv_data\\input_data\\pdv_calcite--20260313--00018.csv'
+
+2026-03-17 10:05:06,690 - ERROR - Error in the fallback visualization of the voltage signal: [Errno 2] No such file or directory: 'C:\\Users\\lucas\\OneDrive - Johns Hopkins\\Ramesh Lab - Research\\Papers\\MPDV\\pdv_data\\input_data\\pdv_calcite--20260313--00018.csv'
+2026-03-17 10:05:06,694 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 23, in spall_doi_finder
+    data = pd.read_csv(fname, skiprows=int(rows_to_skip), nrows=int(nrows))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\lucas\\OneDrive - Johns Hopkins\\Ramesh Lab - Research\\Papers\\MPDV\\pdv_data\\input_data\\pdv_calcite--20260313--00018.csv'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 114, in alpss_main
+    plot_voltage(**inputs)
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\plotting.py", line 495, in plot_voltage
+    data = pd.read_csv(
+           ^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\parsers\readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "c:\Users\lucas\.conda\envs\ALPSS_env\Lib\site-packages\pandas\io\common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\lucas\\OneDrive - Johns Hopkins\\Ramesh Lab - Research\\Papers\\MPDV\\pdv_data\\input_data\\pdv_calcite--20260313--00018.csv'
+
+2026-03-17 10:16:34,474 - ERROR - Error in the execution of the main program:: operands could not be broadcast together with shapes (6394,) (1,639998) 
+2026-03-17 10:16:34,477 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 42, in alpss_main
+    sdf_out = spall_doi_finder(**inputs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\spall_doi_finder.py", line 202, in spall_doi_finder
+    t_doi_start_spec_idx = np.argmin(np.abs(t - t_doi_start))
+                                            ~~^~~~~~~~~~~~~
+ValueError: operands could not be broadcast together with shapes (6394,) (1,639998) 
+
+2026-03-17 10:20:48,168 - ERROR - Error in the execution of the main program:: Input variable "smoothing_window" must be an odd integer and less than half the length of the velocity signal
+2026-03-17 10:20:48,172 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 51, in alpss_main
+    vc_out = velocity_calculation(sdf_out, cen, cf_out, **inputs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\velocity_calculation.py", line 57, in velocity_calculation
+    velocity_f_smooth = smoothing(
+                        ^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\smoothing.py", line 16, in smoothing
+    raise Exception('Input variable "smoothing_window" must be an odd integer and less than half the length of '
+Exception: Input variable "smoothing_window" must be an odd integer and less than half the length of the velocity signal
+
+2026-03-17 14:38:15,579 - ERROR - Error in the execution of the main program:: cannot access local variable 'carrier_fitting' where it is not associated with a value
+2026-03-17 14:38:15,704 - ERROR - Traceback: Traceback (most recent call last):
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss_main.py", line 48, in alpss_main
+    cf_out = carrier_filter(sdf_out, cen, **inputs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lucas\OneDrive - Johns Hopkins\Ramesh Lab - Research\Code\ALPSS\src\alpss\carrier_filter.py", line 129, in carrier_filter
+    "carrier_fitting": carrier_fitting,
+                       ^^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'carrier_fitting' where it is not associated with a value
+

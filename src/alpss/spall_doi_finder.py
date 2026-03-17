@@ -160,11 +160,16 @@ def spall_doi_finder(**inputs):
         f_min = inputs["freq_min"]
         f_max = inputs["freq_max"]
 
-        # Apply a bandpass filter to get rid of noise outside of frequency bounds
+        # Determine frequency of carrier band
+        t_carrier = t[t<np.argmin(np.abs(t - inputs["carrier_band_time"]))]
         numpts = len(time)
+        fft_volt = fft(voltage)
         freq = fftshift(np.arange((-numpts / 2), (numpts / 2)) * fs / numpts)
+        cen = freq[np.abs(fft_volt).argmax()]
+
+        # Apply a bandpass filter to get rid of noise outside of frequency bounds
         filt = (freq > f_min) * (freq < f_max)
-        voltage_filt = ifft(fft(voltage) * filt)
+        voltage_filt = ifft(fft_volt * filt)
 
         # Unwrap the phase
         phas = np.unwrap(np.angle(voltage_filt), axis=0)
